@@ -80,7 +80,6 @@ class BopeeboSong extends Song {
 
 		new FlxTimer().start(4, function(tmr) {
 			trace('Focusing camera on opponent.');
-			currentStage.getDad().playAnimation('frown');
 			var dadPoint = currentStage.getDad().cameraFocusPoint;
 			PlayState.instance.tweenCameraToPosition(dadPoint.x, dadPoint.y, 2, FlxEase.quadInOut);
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.15, 2, true, FlxEase.quadInOut);
