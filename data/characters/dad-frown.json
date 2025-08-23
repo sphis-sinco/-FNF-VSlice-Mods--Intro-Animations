@@ -1,0 +1,20 @@
+{
+        "version": "1.0.0",
+        "name": "Daddy Dearest (Frown)",
+        "assetPath": "characters/dad_frown",
+        "singTime": 8.0,
+        "animations": [
+                {
+                        "name": "frown",
+                        "prefix": "Dad frown",
+                        "offsets": [0, 0]
+                },
+                {
+                        "name": "frown-hold",
+                        "prefix": "Dad frown",
+                        "looped": true,
+                        "frameIndices": [11, 12],
+                        "offsets": [0, 0]
+                }
+        ]
+}

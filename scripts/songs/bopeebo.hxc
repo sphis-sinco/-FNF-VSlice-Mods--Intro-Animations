@@ -9,6 +9,7 @@ import flixel.FlxSprite;
 import flixel.util.FlxTimer;
 import funkin.save.Save;
 import funkin.effects.RetroCameraFade;
+import funkin.audio.FunkinSound;
 
 class BopeeboSong extends Song {
 	var hasPlayedCutscene:Bool;
@@ -70,8 +71,16 @@ class BopeeboSong extends Song {
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.25, 2, true, FlxEase.quadInOut);
 		});
 
+		new FlxTimer().start(3, function(tmr) {
+			currentStage.getBoyfriend().playAnimation('hey');
+			currentStage.getGirlfriend().playAnimation('hey');
+
+			FunkinSound.playOnce(Paths.sound('week1/hey'), 1);
+		});
+
 		new FlxTimer().start(4, function(tmr) {
 			trace('Focusing camera on opponent.');
+			currentStage.getDad().playAnimation('frown');
 			var dadPoint = currentStage.getDad().cameraFocusPoint;
 			PlayState.instance.tweenCameraToPosition(dadPoint.x, dadPoint.y, 2, FlxEase.quadInOut);
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.15, 2, true, FlxEase.quadInOut);
