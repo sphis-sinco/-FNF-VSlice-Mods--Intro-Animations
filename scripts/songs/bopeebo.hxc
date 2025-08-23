@@ -10,37 +10,103 @@ import flixel.util.FlxTimer;
 import funkin.save.Save;
 import funkin.effects.RetroCameraFade;
 
-class BopeeboSong extends Song
-{
-  var hasPlayedCutscene:Bool;
+class BopeeboSong extends Song {
+	var hasPlayedCutscene:Bool;
 
-  public function new()
-  {
-    super('bopeebo');
-  }
+	public function new() {
+		super('bopeebo');
 
-  public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool
-  {
-    return false;
-  }
+		hasPlayedCutscene = false;
+	}
 
-  public override function listAltInstrumentalIds(difficultyId:String, variationId:String):Array<String>
-  {
-    if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard')
-    {
-      var hasBeatenPicoMix = Save.instance.hasBeatenSong(this.id, null, 'pico');
+	public override function onCountdownStart(event:CountdownScriptEvent):Void {
+		super.onCountdownStart(event);
 
-      switch (variationId)
-      {
-        case 'pico':
-          // return hasBeatenPicoMix ? [''] : [];
-          // No Pico mix on BF instrumental, sorry!
-          return [];
-        default:
-          return hasBeatenPicoMix ? ['pico'] : [];
-      }
-    }
+		if (!PlayStatePlaylist.isStoryMode && !hasPlayedCutscene)
+			hasPlayedCutscene = false;
 
-    return [];
-  }
+		if (!hasPlayedCutscene) {
+			trace('Pausing countdown to play a cutscene (`bopeebo`)');
+
+			hasPlayedCutscene = true;
+
+			event.cancel(); // CANCEL THE COUNTDOWN!
+
+			switch (PlayState.instance.currentVariation) {
+				case 'default':
+					startBFCutsceneDefault();
+			}
+		}
+	}
+
+	function startBFCutsceneDefault()
+	{
+		var currentStage = PlayState.instance.currentStage;
+
+		if (currentStage.getBoyfriend() == null)
+		{
+			trace('No BF to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+
+		if (currentStage.getDad() == null)
+		{
+			trace('No dad to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+		if (currentStage.getGirlfriend() == null)
+		{
+			trace('No GF to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+
+		new FlxTimer().start(1, function(tmr) {
+			trace('Focusing camera on player.');
+			var bfPoint = currentStage.getBoyfriend().cameraFocusPoint;
+			PlayState.instance.tweenCameraToPosition(bfPoint.x, bfPoint.y, 2, FlxEase.quadInOut);
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.25, 2, true, FlxEase.quadInOut);
+		});
+
+		new FlxTimer().start(4, function(tmr) {
+			trace('Focusing camera on opponent.');
+			var dadPoint = currentStage.getDad().cameraFocusPoint;
+			PlayState.instance.tweenCameraToPosition(dadPoint.x, dadPoint.y, 2, FlxEase.quadInOut);
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.15, 2, true, FlxEase.quadInOut);
+		});
+
+		new FlxTimer().start(6, function(tmr) {
+			trace('Focusing camera on girlfriend.');
+			var gfPoint = currentStage.getGirlfriend().cameraFocusPoint;
+			PlayState.instance.tweenCameraToPosition(gfPoint.x, gfPoint.y, 2, FlxEase.quadInOut);
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom, 2, true, FlxEase.quadInOut);
+		});
+		new FlxTimer().start(8, function(tmr) {
+			trace('Begin countdown');
+			PlayState.instance.startCountdown();
+		});
+	}
+
+	public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool {
+		return false;
+	}
+
+	public override function listAltInstrumentalIds(difficultyId:String, variationId:String):Array<String> {
+		if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard') {
+			var hasBeatenPicoMix = Save.instance.hasBeatenSong(this.id, null, 'pico');
+
+			switch (variationId) {
+				case 'pico':
+					// return hasBeatenPicoMix ? [''] : [];
+					// No Pico mix on BF instrumental, sorry!
+					return [];
+				default:
+					return hasBeatenPicoMix ? ['pico'] : [];
+			}
+		}
+
+		return [];
+	}
 }
