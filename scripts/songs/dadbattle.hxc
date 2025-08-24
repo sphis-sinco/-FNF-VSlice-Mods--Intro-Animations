@@ -75,10 +75,16 @@ class DadBattleSong extends Song {
 					if (doinGood)
 						PlayState.instance.currentStage.getDad().playAnimation('smirk');
 			}
+			
+			PlayState.instance.isInCutscene = false;
+			PlayState.instance.disableKeys = false;
 		}
 	}
 
-	function startBFCutsceneDefault() {
+	function startBFCutsceneDefault()
+	{		
+		PlayState.instance.isInCutscene = true;
+		PlayState.instance.disableKeys = true;
 		var currentStage = PlayState.instance.currentStage;
 
 		if (currentStage.getBoyfriend() == null) {

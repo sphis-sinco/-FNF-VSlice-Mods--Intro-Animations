@@ -45,11 +45,16 @@ class PicoSong extends Song {
 					startBFCutsceneDefault();
 			}
 		}
+		else {
+			PlayState.instance.isInCutscene = false;
+			PlayState.instance.disableKeys = false;
+		}
 	}
 
 	function startBFCutsceneDefault()
-	{
-		
+	{		
+		PlayState.instance.isInCutscene = true;
+		PlayState.instance.disableKeys = true;
 		cutsceneMusic = FunkinSound.load(Paths.music("darnellCanCutscene/darnellCanCutscene", "weekend1"), true);
 		cutsceneMusic.volume = 1;
 

@@ -45,10 +45,16 @@ class BopeeboSong extends Song {
 					startBFCutsceneDefault();
 			}
 		}
+		else {
+			PlayState.instance.isInCutscene = false;
+			PlayState.instance.disableKeys = false;
+		}
 	}
 
 	function startBFCutsceneDefault()
-	{
+	{		
+		PlayState.instance.isInCutscene = true;
+		PlayState.instance.disableKeys = true;
 		var currentStage = PlayState.instance.currentStage;
 
 		if (currentStage.getBoyfriend() == null)
