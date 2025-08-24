@@ -32,7 +32,7 @@ class SpookeezSong extends Song {
 				case 'default', 'erect':
 					PlayState.instance.camHUD.visible = false;
 					event.cancel(); // CANCEL THE COUNTDOWN!
-					startBFCutsceneDefault();
+					startBFCutscene();
 			}
 		}
 		else {
@@ -41,7 +41,7 @@ class SpookeezSong extends Song {
 		}
 	}
 
-	function startBFCutsceneDefault()
+	function startBFCutscene()
 	{		
 		PlayState.instance.isInCutscene = true;
 		PlayState.instance.disableKeys = true;
