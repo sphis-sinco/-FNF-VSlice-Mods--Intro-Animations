@@ -1,49 +1,118 @@
 {
-        "version": "1.0.0",
-        "name": "Daddy Dearest (Mad)",
-        "assetPath": "characters/dad_mad",
-        "renderType": "multisparrow",
-        "healthIcon": {
-                "id": "dad",
-                "flipX": false
-        },
-        "animations": [
-                {
-                        "name": "frown",
-                        "prefix": "Dad frown mad",
-                        "offsets": [0, 0],
-                        "assetPath": "characters/dad_frown_mad"
-                },
-                {
-                        "name": "smirk",
-                        "prefix": "Dad _mad smile",
-                        "offsets": [-6, 0],
-                        "assetPath": "characters/dad_smirk_mad"
-                },
-                {
-                        "name": "idle",
-                        "prefix": "Dad idle dance",
-                        "offsets": [0, 0]
-                },
-                {
-                        "name": "singLEFT",
-                        "prefix": "Dad Sing Note LEFT",
-                        "offsets": [-10, 10]
-                },
-                {
-                        "name": "singDOWN",
-                        "prefix": "Dad Sing Note DOWN",
-                        "offsets": [0, -30]
-                },
-                {
-                        "name": "singUP",
-                        "prefix": "Dad Sing note UP",
-                        "offsets": [-6, 50]
-                },
-                {
-                        "name": "singRIGHT",
-                        "prefix": "dad sing note right",
-                        "offsets": [0, 27]
-                }
-        ]
+	"version": "1.0.0",
+	"renderType": "multisparrow",
+	"offsets": [
+		0,
+		0
+	],
+	"danceEvery": 1,
+	"scale": 1,
+	"name": "Daddy Dearest (Mad)",
+	"cameraOffsets": [
+		0,
+		0
+	],
+	"flipX": false,
+	"startingAnimation": "idle",
+	"isPixel": false,
+	"singTime": 8,
+	"healthIcon": {
+		"isPixel": false,
+		"offsets": [
+			0,
+			0
+		],
+		"scale": 1,
+		"id": "dad",
+		"flipX": false
+	},
+	"assetPath": "characters/dad_mad",
+	"animations": [
+		{
+			"flipY": false,
+			"offsets": [
+				0,
+				0
+			],
+			"frameRate": 24,
+			"assetPath": "characters/dad_frown_mad",
+			"prefix": "Dad frown mad",
+			"flipX": false,
+			"looped": false,
+			"name": "frown"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				-6,
+				0
+			],
+			"frameRate": 24,
+			"assetPath": "characters/dad_smirk_mad",
+			"prefix": "Dad _mad smile",
+			"flipX": false,
+			"looped": false,
+			"name": "smirk"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				0,
+				0
+			],
+			"frameRate": 24,
+			"prefix": "Dad idle dance",
+			"flipX": false,
+			"looped": false,
+			"name": "idle"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				-2,
+				27
+			],
+			"frameRate": 24,
+			"prefix": "Dad Sing Note LEFT",
+			"flipX": false,
+			"looped": false,
+			"name": "singLEFT"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				0,
+				-30
+			],
+			"frameRate": 24,
+			"prefix": "Dad Sing Note DOWN",
+			"flipX": false,
+			"looped": false,
+			"name": "singDOWN"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				-8,
+				51
+			],
+			"frameRate": 24,
+			"prefix": "Dad Sing note UP",
+			"flipX": false,
+			"looped": false,
+			"name": "singUP"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				-5,
+				10
+			],
+			"frameRate": 24,
+			"prefix": "dad sing note right",
+			"flipX": false,
+			"looped": false,
+			"name": "singRIGHT"
+		}
+	]
 }
