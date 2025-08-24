@@ -14,6 +14,8 @@ import funkin.audio.FunkinSound;
 import funkin.play.character.BaseCharacter;
 import funkin.play.character.SparrowCharacter;
 
+import funkin.modding.events.ScriptEvent;
+
 class BopeeboSong extends Song {
 	var hasPlayedCutscene:Bool;
 
@@ -23,11 +25,12 @@ class BopeeboSong extends Song {
 		hasPlayedCutscene = false;
 	}
 
+	public override function onDestroy(event:ScriptEvent) {
+		hasPlayedCutscene = false;
+	}
+
 	public override function onCountdownStart(event:CountdownScriptEvent):Void {
 		super.onCountdownStart(event);
-
-		if (!PlayStatePlaylist.isStoryMode && !hasPlayedCutscene)
-			hasPlayedCutscene = false;
 
 		if (!hasPlayedCutscene) {
 			trace('Pausing countdown to play a cutscene (`bopeebo`)');
@@ -38,6 +41,7 @@ class BopeeboSong extends Song {
 
 			switch (PlayState.instance.currentVariation) {
 				case 'default':
+					PlayState.instance.camHUD.visible = false;
 					startBFCutsceneDefault();
 			}
 		}
@@ -72,6 +76,7 @@ class BopeeboSong extends Song {
 
 		currentStage.getDad().playAnimation('idle-hold');
 		
+		FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 1);
 		new FlxTimer().start(1, function(tmr) {
 			trace('Focusing camera on player.');
 			var bfPoint = currentStage.getBoyfriend().cameraFocusPoint;
@@ -106,6 +111,7 @@ class BopeeboSong extends Song {
 			frownDad.visible = false;
 			currentStage.getDad().visible = true;
 			PlayState.instance.startCountdown();
+			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
 		});
 	}
 
