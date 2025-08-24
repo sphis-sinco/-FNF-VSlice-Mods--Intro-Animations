@@ -59,10 +59,10 @@ class FreshSong extends Song {
 			hasPlayedCutscene = true;
 
 			switch (PlayState.instance.currentVariation) {
-				case 'default':
+				case 'default', 'erect':
 					PlayState.instance.camHUD.visible = false;
 					event.cancel(); // CANCEL THE COUNTDOWN!
-					startBFCutsceneDefault();
+					startBFCutscene();
 			}
 		}
 		else {
@@ -71,7 +71,7 @@ class FreshSong extends Song {
 		}
 	}
 
-	function startBFCutsceneDefault()
+	function startBFCutscene()
 	{		
 		PlayState.instance.isInCutscene = true;
 		PlayState.instance.disableKeys = true;

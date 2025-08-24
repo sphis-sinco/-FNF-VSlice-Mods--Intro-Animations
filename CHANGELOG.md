@@ -1,3 +1,6 @@
+Dadbattle (Erect) intro cutscene, Addition
+Fresh (Erect) intro cutscene, Addition
+Bopeebo (Erect) intro cutscene, Addition
 Daddy Dearest (Mad) left and right being flipped, Bugfix
 Dadbattle Dad smirk animation playing when the song resets / when it shouldn't, Bugfix
 Daddy Dearest (Mad) offsets, Bugfix

@@ -64,7 +64,7 @@ class DadBattleSong extends Song {
 				case 'default', 'erect':
 					PlayState.instance.camHUD.visible = false;
 					event.cancel(); // CANCEL THE COUNTDOWN!
-					startBFCutsceneDefault();
+					startBFCutscene();
 			}
 		} else {
 			PlayState.instance.isInCutscene = false;
@@ -72,7 +72,7 @@ class DadBattleSong extends Song {
 		}
 	}
 
-	function startBFCutsceneDefault()
+	function startBFCutscene()
 	{		
 		PlayState.instance.isInCutscene = true;
 		PlayState.instance.disableKeys = true;
