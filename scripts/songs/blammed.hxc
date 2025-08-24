@@ -97,11 +97,11 @@ class BlammedSong extends Song {
 			currentStage.getDad().playAnimation('hey');	
 		});
 
-		new FlxTimer().start(4, function(tmr) {
-			PlayState.instance.tweenCameraToPosition(gfPoint.x, gfPoint.y, 4, FlxEase.quadInOut);
+		new FlxTimer().start(1, function(tmr) {
+			PlayState.instance.tweenCameraToPosition(gfPoint.x, gfPoint.y, 2, FlxEase.sineInOut);
 		});
 
-		new FlxTimer().start(6, function(tmr) {
+		new FlxTimer().start(4, function(tmr) {
 			trace('Begin countdown');
 
 			currentStage.getDad().destroy();
