@@ -1,7 +1,8 @@
+Daddy Dearest starts the Bopeebo (Default and Erect) Intro Cutscene frowning, Tweak
 Daddy (Dearest) now smirks at the end of the Bopeebo and Fresh (Default and Erect) intro cutscenes, Tweak
-Dadbattle (Erect) intro cutscene, Addition
-Fresh (Erect) intro cutscene, Addition
-Bopeebo (Erect) intro cutscene, Addition
+Dadbattle (Erect) intro cutscene (It's just the default one LOL), Addition
+Fresh (Erect) intro cutscene (It's just the default one LOL), Addition
+Bopeebo (Erect) intro cutscene (It's just the default one LOL), Addition
 Daddy Dearest (Mad) left and right being flipped, Bugfix
 Dadbattle Dad smirk animation playing when the song resets / when it shouldn't, Bugfix
 Daddy Dearest (Mad) offsets, Bugfix

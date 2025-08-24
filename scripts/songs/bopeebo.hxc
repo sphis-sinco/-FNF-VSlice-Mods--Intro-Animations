@@ -74,7 +74,7 @@ class BopeeboSong extends Song {
 			return;
 		}
 
-		currentStage.getDad().playAnimation('idle-hold');
+		currentStage.getDad().playAnimation('frown');
 		
 		FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 1);
 		new FlxTimer().start(1, function(tmr) {
