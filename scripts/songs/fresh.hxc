@@ -65,6 +65,10 @@ class FreshSong extends Song {
 		}
 
 		currentStage.getDad().playAnimation('frown');
+
+		var bfPoint = currentStage.getBoyfriend().cameraFocusPoint;
+		PlayState.instance.tweenCameraToPosition(bfPoint.x, bfPoint.y, 0, FlxEase.quadInOut);
+		PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1, 0, true, FlxEase.quadInOut);
 		
 		FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 1);
 		new FlxTimer().start(1, function(tmr) {
