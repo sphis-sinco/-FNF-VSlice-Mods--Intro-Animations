@@ -17,12 +17,10 @@ import funkin.input.Cursor;
 import flixel.FlxCamera;
 import flixel.FlxG;
 
-import polymod.Polymod;
-
 class MainMenuInjection extends Module {
 	
     var yourMainMenuText = "Intro Animations v";
-    var versionString = "3.0.0";
+    var versionString = "3.0";
 	var currentState = "";
 
     function new() {
@@ -43,7 +41,7 @@ class MainMenuInjection extends Module {
 
 	function onUpdate(event) {
         super.onUpdate(event);
-	
+
         if (currentState == "MainMenuState") {
             if (!StringTools.contains(FlxG.state.leftWatermarkText.text, "Friday Night Funkin'")) {
                 FlxG.state.leftWatermarkText.text = StringTools.replace(
