@@ -26,8 +26,6 @@ class SouthSong extends Song {
 		super.onCountdownStart(event);
 
 		if (!hasPlayedCutscene) {
-			trace('Pausing countdown to play a cutscene (`south`)');
-
 			hasPlayedCutscene = true;
 
 			event.cancel(); // CANCEL THE COUNTDOWN!

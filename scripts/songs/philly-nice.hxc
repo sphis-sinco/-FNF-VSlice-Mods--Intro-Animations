@@ -32,8 +32,6 @@ class PhillyNiceSong extends Song {
 		super.onCountdownStart(event);
 
 		if (!hasPlayedCutscene) {
-			trace('Pausing countdown to play a cutscene (`bopeebo`)');
-
 			hasPlayedCutscene = true;
 
 			event.cancel(); // CANCEL THE COUNTDOWN!

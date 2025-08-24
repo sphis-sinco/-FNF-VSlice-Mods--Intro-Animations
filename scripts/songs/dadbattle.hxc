@@ -58,8 +58,6 @@ class DadBattleSong extends Song {
 			doinGood = true;
 
 		if (!hasPlayedCutscene) {
-			trace('Pausing countdown to play a cutscene (`dadbattle`)');
-
 			hasPlayedCutscene = true;
 
 			event.cancel(); // CANCEL THE COUNTDOWN!
@@ -75,7 +73,7 @@ class DadBattleSong extends Song {
 					if (doinGood)
 						PlayState.instance.currentStage.getDad().playAnimation('smirk');
 			}
-			
+
 			PlayState.instance.isInCutscene = false;
 			PlayState.instance.disableKeys = false;
 		}

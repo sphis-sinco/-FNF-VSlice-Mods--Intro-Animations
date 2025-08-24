@@ -56,8 +56,6 @@ class FreshSong extends Song {
 			doinGood = true;
 
 		if (!hasPlayedCutscene) {
-			trace('Pausing countdown to play a cutscene (`fresh`)');
-
 			hasPlayedCutscene = true;
 
 			event.cancel(); // CANCEL THE COUNTDOWN!

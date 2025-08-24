@@ -26,8 +26,6 @@ class MonsterSong extends Song {
 		super.onCountdownStart(event);
 
 		if (!hasPlayedCutscene) {
-			trace('Pausing countdown to play a cutscene (`monster`)');
-
 			hasPlayedCutscene = true;
 
 			event.cancel(); // CANCEL THE COUNTDOWN!
