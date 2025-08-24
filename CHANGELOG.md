@@ -1,3 +1,5 @@
+South (Erect) intro cutscene (It's just the default one minus one change), Addition
+Spookeez (Erect) intro cutscene (It's just the default one LOL), Addition
 Daddy Dearest no longer stands with frozen demonic eyes in the Bopeebo (Default and Erect) Intro Cutscenes, Tweak
 Daddy Dearest starts the Bopeebo (Default and Erect) Intro Cutscenes frowning, Tweak
 Daddy (Dearest) now smirks at the end of the Bopeebo and Fresh (Default and Erect) intro cutscenes, Tweak

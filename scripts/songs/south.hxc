@@ -29,7 +29,7 @@ class SouthSong extends Song {
 			hasPlayedCutscene = true;
 
 			switch (PlayState.instance.currentVariation) {
-				case 'default':
+				case 'default', 'erect':
 					PlayState.instance.camHUD.visible = false;
 					event.cancel(); // CANCEL THE COUNTDOWN!
 					startBFCutsceneDefault();
@@ -64,7 +64,10 @@ class SouthSong extends Song {
 			return;
 		}
 
-		currentStage.getBoyfriend().playAnimation('cheer');
+		if (PlayState.instance.currentVariation == 'default')
+			currentStage.getBoyfriend().playAnimation('cheer');
+		else
+			currentStage.getBoyfriend().playAnimation('hey');
 
 		var bfPoint = currentStage.getBoyfriend().cameraFocusPoint;
 		var dadPoint = currentStage.getDad().cameraFocusPoint;
