@@ -71,7 +71,9 @@ class SatinPantiesSong extends Song {
 			return;
 		}
 
-		currentStage.getDad().playAnimation('frown');
+		currentStage.getGirlfriend().playAnimation('idle-hold');
+		currentStage.getBoyfriend().playAnimation('idle');
+		currentStage.getDad().playAnimation('idle');
 
 		FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 1);
 		new FlxTimer().start(1, function(tmr) {
@@ -80,26 +82,25 @@ class SatinPantiesSong extends Song {
 			PlayState.instance.tweenCameraToPosition(bfPoint.x, bfPoint.y, 2, FlxEase.quadInOut);
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.25, 2, true, FlxEase.quadInOut);
 		});
-
 		new FlxTimer().start(3, function(tmr) {
-			currentStage.getBoyfriend().playAnimation('hey');
-			currentStage.getGirlfriend().playAnimation('cheer');
-
 			FunkinSound.playOnce(Paths.sound('week1/hey'), 1);
+			
+			currentStage.getBoyfriend().playAnimation('hey');
 		});
 
+		var dadPoint = currentStage.getDad().cameraFocusPoint;
 		new FlxTimer().start(4, function(tmr) {
 			trace('Focusing camera on opponent.');
-			var dadPoint = currentStage.getDad().cameraFocusPoint;
+			currentStage.getDad().playAnimation('frown');
 
 			PlayState.instance.tweenCameraToPosition(dadPoint.x - 160, dadPoint.y - 160, 2, FlxEase.quadInOut);
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.5, 2, true, FlxEase.quadInOut);
 		});
-
 		new FlxTimer().start(8, function(tmr) {
 			trace('Begin countdown');
-			currentStage.getDad().playAnimation('smirk');
+			currentStage.getDad().playAnimation('unfrown');
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom, 2, true, FlxEase.quadInOut);
+			PlayState.instance.tweenCameraToPosition(dadPoint.x, dadPoint.y, 2, FlxEase.quadInOut);
 			PlayState.instance.startCountdown();
 			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
 		});

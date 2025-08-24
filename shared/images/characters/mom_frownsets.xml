@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="mom_frownsets.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Mom Frown Idle0000" x="483" y="1646" width="467" height="811" frameX="0" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0001" x="4" y="4" width="478" height="810" frameX="0" frameY="-3" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0002" x="2391" y="2464" width="467" height="797" frameX="0" frameY="-17" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0003" x="1437" y="1646" width="478" height="792" frameX="0" frameY="-22" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0004" x="1905" y="2468" width="461" height="805" frameX="-4" frameY="-9" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0005" x="3357" y="1646" width="472" height="801" frameX="-4" frameY="-13" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0006" x="472" y="2465" width="460" height="807" frameX="-4" frameY="-7" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0007" x="958" y="1646" width="471" height="804" frameX="-4" frameY="-10" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0008" x="4" y="2464" width="460" height="813" frameX="-4" frameY="-1" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0009" x="2878" y="1644" width="471" height="811" frameX="-4" frameY="-3" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0010" x="3388" y="4" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0011" x="490" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0012" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0013" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0014" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0015" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0016" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0017" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0018" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0019" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0020" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0021" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0022" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0023" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0024" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0025" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0026" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0027" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0028" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0029" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0030" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0031" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0032" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0033" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0034" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0035" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0036" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0037" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0038" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0039" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0040" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0041" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0042" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0043" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0044" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0045" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0046" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0047" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0048" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0049" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0050" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0051" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0052" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0053" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0054" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0055" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0056" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0057" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0058" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0059" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0060" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0061" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0062" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0063" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0064" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0065" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0066" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0067" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0068" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0069" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0070" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0071" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0072" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0073" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0074" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0075" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0076" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0077" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0078" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0079" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0080" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0081" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0082" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0083" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0084" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0085" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0086" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0087" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0088" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0089" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0090" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0091" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0092" x="1923" y="1646" width="460" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0093" x="2399" y="824" width="471" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0094" x="4" y="822" width="471" height="814" frameX="-4" frameY="0" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Frown Idle0095" x="973" y="4" width="475" height="812" frameX="-4" frameY="-2" frameWidth="479" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0000" x="1437" y="2446" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0001" x="2878" y="824" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0002" x="483" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0003" x="1456" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0004" x="3357" y="2455" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0005" x="3357" y="826" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0006" x="962" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0007" x="1939" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0008" x="958" y="2458" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0009" x="4" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0010" x="1441" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0011" x="2422" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0012" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0013" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0014" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0015" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0016" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0017" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0018" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0019" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0020" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0021" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0022" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0023" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0024" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0025" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0026" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0027" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0028" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0029" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0030" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0031" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0032" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0033" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0034" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0035" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0036" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0037" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0038" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0039" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0040" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0041" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0042" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0043" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0044" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0045" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0046" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0047" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0048" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0049" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0050" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0051" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0052" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0053" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0054" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0055" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0056" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0057" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0058" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0059" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0060" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0061" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0062" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0063" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0064" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0065" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0066" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0067" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0068" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0069" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0070" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0071" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0072" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0073" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0074" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0075" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0076" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0077" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0078" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0079" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0080" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0081" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0082" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0083" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0084" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0085" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0086" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0087" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0088" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0089" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0090" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0091" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0092" x="2878" y="2463" width="460" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0093" x="2399" y="1644" width="471" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0094" x="1920" y="824" width="471" height="814" frameX="0" frameY="0" frameWidth="475" frameHeight="814"/>
+	<SubTexture name="Mom Unfrown0095" x="2905" y="4" width="475" height="812" frameX="0" frameY="-2" frameWidth="475" frameHeight="814"/>
+</TextureAtlas>
