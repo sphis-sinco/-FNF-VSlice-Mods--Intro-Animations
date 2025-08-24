@@ -12,12 +12,6 @@
                         "assetPath": "characters/dad_frown"
                 },
                 {
-                        "name": "frown-mad",
-                        "prefix": "Dad frown mad",
-                        "offsets": [0, 0],
-                        "assetPath": "characters/dad_frown_mad"
-                },
-                {
                         "name": "frown-hold-frozen",
                         "prefix": "Dad frown",
                         "looped": true,
@@ -46,12 +40,6 @@
                         "frameIndices": [16, 17, 18, 19],
                         "offsets": [-6, 0],
                         "assetPath": "characters/dad_smirk"
-                },
-                {
-                        "name": "smirk-mad",
-                        "prefix": "Dad _mad smile",
-                        "offsets": [-6, 0],
-                        "assetPath": "characters/dad_smirk_mad"
                 },
                 {
                         "name": "idle",
