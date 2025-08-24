@@ -13,11 +13,11 @@ import funkin.effects.RetroCameraFade;
 
 import funkin.audio.FunkinSound;
 
-class SpookeezSong extends Song {
+class SouthSong extends Song {
 	var hasPlayedCutscene:Bool;
 
 	public function new() {
-		super('spookeez');
+		super('south');
 
 		hasPlayedCutscene = false;
 	}
@@ -26,7 +26,7 @@ class SpookeezSong extends Song {
 		super.onCountdownStart(event);
 
 		if (!hasPlayedCutscene) {
-			trace('Pausing countdown to play a cutscene (`spookeez`)');
+			trace('Pausing countdown to play a cutscene (`south`)');
 
 			hasPlayedCutscene = true;
 
@@ -60,21 +60,17 @@ class SpookeezSong extends Song {
 			return;
 		}
 
-		currentStage.fetchAssetPaths();
-		currentStage.doLightningStrike(true);
-		currentStage.getDad().playAnimation('cheer');
+		currentStage.getBoyfriend().playAnimation('cheer');
 
+		var bfPoint = currentStage.getBoyfriend().cameraFocusPoint;
 		var gfPoint = currentStage.getGirlfriend().cameraFocusPoint;
 		var dadPoint = currentStage.getDad().cameraFocusPoint;
-		PlayState.instance.tweenCameraToPosition(gfPoint.x, gfPoint.y, 0, FlxEase.quadInOut);
-		PlayState.instance.tweenCameraZoom(currentStage.camZoom * 0.75, 1, true, FlxEase.bounceOut);
-		FunkinSound.playOnce(Paths.sound('week2/spooky-cheer'), 1);
+		PlayState.instance.tweenCameraToPosition(bfPoint.x, bfPoint.y, .5, FlxEase.bounceOut);
+		PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.1, 1, true, FlxEase.bounceOut);
+		FunkinSound.playOnce(Paths.sound('week2/bf-cheer'), 1);
 
-		new FlxTimer().start(1, function(tmr) {
-			currentStage.getDad().playAnimation('idle');
-			currentStage.getBoyfriend().playAnimation('idle');
-			currentStage.getGirlfriend().playAnimation('danceLeft');
-		});
+		currentStage.getDad().playAnimation('idle');
+		currentStage.getGirlfriend().playAnimation('danceLeft');
 
 		new FlxTimer().start(2, function(tmr) {
 			trace('Begin countdown');
@@ -87,6 +83,10 @@ class SpookeezSong extends Song {
 
 	public override function onDestroy(event:ScriptEvent) {
 		hasPlayedCutscene = false;
+	}
+
+	public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool {
+		return false;
 	}
 
 	public override function listAltInstrumentalIds(difficultyId:String, variationId:String):Array<String> {
