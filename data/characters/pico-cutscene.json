@@ -1,0 +1,50 @@
+{
+        "version": "1.0.0",
+        "name": "Pico (Intro Cutscene)",
+        "assetPath": "characters/Pico_Basic",
+        "flipX": true,
+        "renderType": "multisparrow",
+        "healthIcon": {
+                "id": "pico",
+                "flipX": false
+        },
+        "animations": [
+                {
+                        "name": "idle",
+                        "prefix": "Pico Idle Dance",
+                        "offsets": [0, 0]
+                },
+                {
+                        "name": "singRIGHT",
+                        "prefix": "Pico NOTE LEFT0",
+                        "offsets": [-86, -10]
+                },
+                {
+                        "name": "singDOWN",
+                        "prefix": "Pico Down Note0",
+                        "offsets": [-37, -82]
+                },
+                {
+                        "name": "singUP",
+                        "prefix": "pico Up note0",
+                        "offsets": [-32, 28]
+                },
+                {
+                        "name": "singLEFT",
+                        "prefix": "Pico Note Right0",
+                        "offsets": [61, 2]
+                },
+                {
+                        "name": "pissed",
+                        "assetPath": "characters/pico_pissed",
+                        "prefix": "Pico Gets Pissed",
+                        "offsets": [0, 0]
+                },
+                {
+                        "name": "unpissed",
+                        "assetPath": "characters/pico_pissed",
+                        "prefix": "Pico Gets unpissed",
+                        "offsets": [0, 0]
+                }
+        ]
+}
