@@ -22,7 +22,7 @@ import polymod.Polymod;
 class MainMenuInjection extends Module {
 	
     var yourMainMenuText = "Intro Animations v";
-    var versionString = "3.0.0"
+    var versionString = "3.0.0";
 	var currentState = "";
 
     function new() {
