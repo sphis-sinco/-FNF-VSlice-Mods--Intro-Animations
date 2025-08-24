@@ -13,11 +13,11 @@ import funkin.effects.RetroCameraFade;
 
 import funkin.audio.FunkinSound;
 
-class SouthSong extends Song {
+class MonsterSong extends Song {
 	var hasPlayedCutscene:Bool;
 
 	public function new() {
-		super('south');
+		super('monster');
 
 		hasPlayedCutscene = false;
 	}
@@ -26,7 +26,7 @@ class SouthSong extends Song {
 		super.onCountdownStart(event);
 
 		if (!hasPlayedCutscene) {
-			trace('Pausing countdown to play a cutscene (`south`)');
+			trace('Pausing countdown to play a cutscene (`monster`)');
 
 			hasPlayedCutscene = true;
 
@@ -60,20 +60,17 @@ class SouthSong extends Song {
 			return;
 		}
 
-		currentStage.getBoyfriend().playAnimation('cheer');
+		currentStage.fetchAssetPaths();
+		currentStage.doLightningStrike(true);
 
-		var bfPoint = currentStage.getBoyfriend().cameraFocusPoint;
 		var dadPoint = currentStage.getDad().cameraFocusPoint;
-		PlayState.instance.tweenCameraToPosition(bfPoint.x, bfPoint.y, .5, FlxEase.bounceOut);
-		PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.1, 1, true, FlxEase.bounceOut);
-		FunkinSound.playOnce(Paths.sound('week2/bf-cheer'), 1);
+		PlayState.instance.tweenCameraToPosition(dadPoint.x, dadPoint.y, 0, FlxEase.bounceOut);
+		PlayState.instance.tweenCameraZoom(currentStage.camZoom * .9, 1, true, FlxEase.bounceOut);
 
 		currentStage.getDad().playAnimation('idle');
-		currentStage.getGirlfriend().playAnimation('danceLeft');
 
 		new FlxTimer().start(2, function(tmr) {
 			trace('Begin countdown');
-			PlayState.instance.tweenCameraToPosition(dadPoint.x, dadPoint.y, 2, FlxEase.quadInOut);
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1, 2, true, FlxEase.quadInOut);
 			PlayState.instance.startCountdown();
 			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
@@ -89,17 +86,6 @@ class SouthSong extends Song {
 	}
 
 	public override function listAltInstrumentalIds(difficultyId:String, variationId:String):Array<String> {
-		if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard') {
-			var hasBeatenPicoMix = Save.instance.hasBeatenSong(this.id, null, 'pico');
-
-			switch (variationId) {
-				case 'pico':
-					// return hasBeatenPicoMix ? [''] : [];
-					// No Pico mix on BF instrumental, sorry!
-					return [];
-				default:
-					return hasBeatenPicoMix ? ['pico'] : [];
-			}
-		}
+		return [];
 	}
 }
