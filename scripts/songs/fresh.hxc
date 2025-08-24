@@ -51,7 +51,10 @@ class FreshSong extends Song {
 		});
 		trace(scoreRank);
 
-		doinGood = (scoreRank != 'SHIT' && isStoryMode);
+		doinGood = (scoreRank != 'SHIT');
+
+		if (!isStoryMode)
+			doinGood = true;
 
 		if (!hasPlayedCutscene) {
 			trace('Pausing countdown to play a cutscene (`fresh`)');
