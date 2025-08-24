@@ -45,6 +45,12 @@
                         "assetPath": "characters/pico_pissed",
                         "prefix": "Pico Gets unpissed",
                         "offsets": [0, 0]
+                },
+                {
+                        "name": "pissed-flinch",
+                        "assetPath": "characters/pico_pissed_flinch",
+                        "prefix": "Pico pissed flinch",
+                        "offsets": [0, 0]
                 }
         ]
 }
