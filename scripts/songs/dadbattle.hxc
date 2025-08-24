@@ -67,12 +67,6 @@ class DadBattleSong extends Song {
 					startBFCutsceneDefault();
 			}
 		} else {
-			switch (PlayState.instance.currentVariation) {
-				case 'default', 'erect':
-					if (doinGood)
-						PlayState.instance.currentStage.getDad().playAnimation('smirk');
-			}
-
 			PlayState.instance.isInCutscene = false;
 			PlayState.instance.disableKeys = false;
 		}
@@ -138,6 +132,8 @@ class DadBattleSong extends Song {
 
 		new FlxTimer().start(5, function(tmr) {
 			trace('Begin countdown');
+			if (doinGood)
+				currentStage.getDad().playAnimation('smirk');
 			PlayState.instance.startCountdown();
 			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
 		});
