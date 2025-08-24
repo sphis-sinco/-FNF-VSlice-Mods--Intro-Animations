@@ -11,11 +11,102 @@ import flixel.util.FlxTimer;
 import funkin.save.Save;
 import funkin.effects.RetroCameraFade;
 
+import funkin.audio.FunkinSound;
+import funkin.play.character.CharacterType;
+import funkin.play.character.CharacterDataParser;
+
 class BlammedSong extends Song {
 	var hasPlayedCutscene:Bool;
 
 	public function new() {
 		super('blammed');
+
+		hasPlayedCutscene = false;
+	}
+
+	public override function onDestroy(event:ScriptEvent) {
+		hasPlayedCutscene = false;
+	}
+
+	public override function onCountdownStart(event:CountdownScriptEvent):Void {
+		super.onCountdownStart(event);
+
+		if (!hasPlayedCutscene) {
+			trace('Pausing countdown to play a cutscene (`bopeebo`)');
+
+			hasPlayedCutscene = true;
+
+			event.cancel(); // CANCEL THE COUNTDOWN!
+
+			switch (PlayState.instance.currentVariation) {
+				case 'default':
+					PlayState.instance.camHUD.visible = false;
+					startBFCutsceneDefault();
+			}
+		}
+	}
+
+	function startBFCutsceneDefault()
+	{		
+		var currentStage = PlayState.instance.currentStage;
+
+		if (currentStage.getBoyfriend() == null)
+		{
+			trace('No BF to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+
+		if (currentStage.getDad() == null)
+		{
+			trace('No dad to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+		if (currentStage.getGirlfriend() == null)
+		{
+			trace('No GF to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+
+		var gfPoint = currentStage.getGirlfriend().cameraFocusPoint;
+		var bfPoint = currentStage.getBoyfriend().cameraFocusPoint;
+		var dadPoint = currentStage.getDad().cameraFocusPoint;		
+
+		currentStage.getDad().destroy();
+		character = CharacterDataParser.fetchCharacter('pico-cutscene');
+		currentStage.addCharacter(character, CharacterType.DAD);
+		currentStage.refresh();
+		
+		PlayState.instance.tweenCameraToPosition(dadPoint.x, dadPoint.y, 2, FlxEase.quadInOut);
+		currentStage.getDad().playAnimation('shrug');	
+
+		FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 1);
+
+		new FlxTimer().start(1, function(tmr) {
+			currentStage.getBoyfriend().playAnimation('cheer');	
+			currentStage.getBoyfriend().playAnimation('hey');
+			FunkinSound.playOnce(Paths.sound('week1/hey'), 1);
+			currentStage.getDad().playAnimation('hey');	
+		});
+
+		new FlxTimer().start(4, function(tmr) {
+			PlayState.instance.tweenCameraToPosition(gfPoint.x, gfPoint.y, 4, FlxEase.quadInOut);
+		});
+
+		new FlxTimer().start(6, function(tmr) {
+			trace('Begin countdown');
+
+			currentStage.getDad().destroy();
+			character = CharacterDataParser.fetchCharacter('pico');
+			currentStage.addCharacter(character, CharacterType.DAD);
+			currentStage.refresh();
+			currentStage.getDad().playAnimation('idle');
+
+			PlayState.instance.startCountdown();
+			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
+		});
 	}
 
 	public override function listAltInstrumentalIds(difficultyId:String, variationId:String):Array<String> {

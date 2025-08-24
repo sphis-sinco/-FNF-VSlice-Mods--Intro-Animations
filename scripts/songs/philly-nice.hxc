@@ -75,7 +75,6 @@ class PhillyNiceSong extends Song {
 		var dadPoint = currentStage.getDad().cameraFocusPoint;
 		
 		PlayState.instance.tweenCameraToPosition(bfPoint.x, bfPoint.y, 2, FlxEase.quadInOut);
-		PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.5, 0, true, FlxEase.quadInOut);
 
 		FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 1);
 
@@ -93,7 +92,6 @@ class PhillyNiceSong extends Song {
 
 		new FlxTimer().start(2, function(tmr) {
 			currentStage.getDad().playAnimation('unpissed');
-			PlayState.instance.tweenCameraZoom(currentStage.camZoom, 4, true, FlxEase.quadInOut);
 			PlayState.instance.tweenCameraToPosition(gfPoint.x, gfPoint.y, 4, FlxEase.quadInOut);
 		});
 
