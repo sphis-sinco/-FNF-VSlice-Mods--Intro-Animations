@@ -10,6 +10,9 @@ import flixel.FlxSprite;
 import flixel.util.FlxTimer;
 import funkin.save.Save;
 import funkin.effects.RetroCameraFade;
+import funkin.play.scoring.Scoring;
+
+import funkin.Highscore;
 
 import funkin.audio.FunkinSound;
 
@@ -22,8 +25,33 @@ class FreshSong extends Song {
 		hasPlayedCutscene = false;
 	}
 
+	var doinGood = false;
+	var isStoryMode = false;
+	public var scoreRank:ScoringRank;
+
 	public override function onCountdownStart(event:CountdownScriptEvent):Void {
 		super.onCountdownStart(event);
+		isStoryMode = PlayStatePlaylist.isStoryMode;
+
+		var tallers = {
+			sick: Highscore.tallies.sick,
+			good: Highscore.tallies.good,
+			bad: Highscore.tallies.bad,
+			shit: Highscore.tallies.shit,
+			missed: Highscore.tallies.missed,
+			combo: Highscore.tallies.combo,
+			maxCombo: Highscore.tallies.maxCombo,
+			totalNotesHit: Highscore.tallies.totalNotesHit,
+			totalNotes: Highscore.tallies.totalNotes,
+		};
+
+		scoreRank = Scoring.calculateRank({
+			score: PlayState.instance.songScore,
+			tallies: tallers
+		});
+		trace(scoreRank);
+
+		doinGood = (scoreRank != 'SHIT' && isStoryMode);
 
 		if (!hasPlayedCutscene) {
 			trace('Pausing countdown to play a cutscene (`fresh`)');
@@ -67,6 +95,7 @@ class FreshSong extends Song {
 		currentStage.getDad().playAnimation('frown');
 
 		var bfPoint = currentStage.getBoyfriend().cameraFocusPoint;
+		var dadPoint = currentStage.getDad().cameraFocusPoint;
 		PlayState.instance.tweenCameraToPosition(bfPoint.x, bfPoint.y, 0, FlxEase.quadInOut);
 		PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1, 0, true, FlxEase.quadInOut);
 		
@@ -79,15 +108,33 @@ class FreshSong extends Song {
 		});
 
 		new FlxTimer().start(3, function(tmr) {
-			currentStage.getBoyfriend().playAnimation('hey');
-			currentStage.getGirlfriend().playAnimation('cheer');
+			if (!doinGood){
+				currentStage.getBoyfriend().playAnimation('singLEFTmiss');
+				currentStage.getGirlfriend().playAnimation('sad');
+				FunkinSound.playOnce(Paths.soundRandom('missnote', 1, 3), FlxG.random.float(0.5, 0.6));
 
-			FunkinSound.playOnce(Paths.sound('week1/hey'), 1);
+				new FlxTimer().start(1, function(tmr) {
+					trace('Focusing camera on opponent.');
+					
+					currentStage.getDad().playAnimation('smirk');
+
+					PlayState.instance.tweenCameraToPosition(dadPoint.x - 160, dadPoint.y - 160, 2, FlxEase.quadInOut);
+					PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.5, 2, true, FlxEase.quadInOut);
+				});
+				
+			} else {
+				currentStage.getBoyfriend().playAnimation('hey');
+				currentStage.getGirlfriend().playAnimation('cheer');
+				FunkinSound.playOnce(Paths.sound('week1/hey'), 1);
+			}
+
 		});
 
-		new FlxTimer().start(5, function(tmr) {
+		new FlxTimer().start((doinGood) ? 5 : 8, function(tmr) {
 			trace('Begin countdown');
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom, 2, true, FlxEase.quadInOut);
+
+			PlayState.instance.tweenCameraToPosition(dadPoint.x, dadPoint.y, 2, FlxEase.quadInOut);
 			PlayState.instance.startCountdown();
 			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
 		});
