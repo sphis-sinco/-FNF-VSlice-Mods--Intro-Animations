@@ -87,7 +87,6 @@ class BopeeboSong extends Song {
 		new FlxTimer().start(3, function(tmr) {
 			currentStage.getBoyfriend().playAnimation('hey');
 			currentStage.getGirlfriend().playAnimation('cheer');
-			currentStage.getDad().playAnimation('frown-hold-frozen');
 
 			FunkinSound.playOnce(Paths.sound('week1/hey'), 1);
 		});

@@ -1,4 +1,5 @@
-Daddy Dearest starts the Bopeebo (Default and Erect) Intro Cutscene frowning, Tweak
+Daddy Dearest no longer stands with frozen demonic eyes in the Bopeebo (Default and Erect) Intro Cutscenes, Tweak
+Daddy Dearest starts the Bopeebo (Default and Erect) Intro Cutscenes frowning, Tweak
 Daddy (Dearest) now smirks at the end of the Bopeebo and Fresh (Default and Erect) intro cutscenes, Tweak
 Dadbattle (Erect) intro cutscene (It's just the default one LOL), Addition
 Fresh (Erect) intro cutscene (It's just the default one LOL), Addition
