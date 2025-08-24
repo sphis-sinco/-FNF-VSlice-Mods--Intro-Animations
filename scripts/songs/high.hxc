@@ -18,10 +18,90 @@ import funkin.play.song.Song;
 import funkin.play.stage.StageProp;
 import funkin.save.Save;
 
-class HighSong extends Song
-{
-  function new()
-  {
-    super('high');
-  }
+class HighSong extends Song {
+	var hasPlayedCutscene:Bool;
+
+	public function new() {
+		super('high');
+
+		hasPlayedCutscene = false;
+	}
+
+	public override function onDestroy(event:ScriptEvent) {
+		hasPlayedCutscene = false;
+	}
+
+	public override function onCountdownStart(event:CountdownScriptEvent):Void {
+		super.onCountdownStart(event);
+
+		if (!hasPlayedCutscene) {
+			hasPlayedCutscene = true;
+
+			switch (PlayState.instance.currentVariation) {
+				case 'default', 'erect':
+					PlayState.instance.camHUD.visible = false;
+					event.cancel(); // CANCEL THE COUNTDOWN!
+					startBFCutscene();
+			}
+		} else {
+			PlayState.instance.isInCutscene = false;
+			PlayState.instance.disableKeys = false;
+		}
+	}
+
+	function startBFCutscene() {
+		PlayState.instance.isInCutscene = true;
+		PlayState.instance.disableKeys = true;
+		var currentStage = PlayState.instance.currentStage;
+
+		if (currentStage.getBoyfriend() == null) {
+			trace('No BF to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+
+		if (currentStage.getDad() == null) {
+			trace('No dad to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+		if (currentStage.getGirlfriend() == null) {
+			trace('No GF to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+
+		currentStage.getDad().playAnimation('frown');
+
+		FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 1);
+		new FlxTimer().start(1, function(tmr) {
+			trace('Focusing camera on player.');
+			var bfPoint = currentStage.getBoyfriend().cameraFocusPoint;
+			PlayState.instance.tweenCameraToPosition(bfPoint.x, bfPoint.y, 2, FlxEase.quadInOut);
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.25, 2, true, FlxEase.quadInOut);
+		});
+
+		new FlxTimer().start(3, function(tmr) {
+			currentStage.getBoyfriend().playAnimation('hey');
+			currentStage.getGirlfriend().playAnimation('cheer');
+
+			FunkinSound.playOnce(Paths.sound('week1/hey'), 1);
+		});
+
+		new FlxTimer().start(4, function(tmr) {
+			trace('Focusing camera on opponent.');
+			var dadPoint = currentStage.getDad().cameraFocusPoint;
+
+			PlayState.instance.tweenCameraToPosition(dadPoint.x - 160, dadPoint.y - 160, 2, FlxEase.quadInOut);
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.5, 2, true, FlxEase.quadInOut);
+		});
+
+		new FlxTimer().start(8, function(tmr) {
+			trace('Begin countdown');
+			currentStage.getDad().playAnimation('smirk');
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom, 2, true, FlxEase.quadInOut);
+			PlayState.instance.startCountdown();
+			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
+		});
+	}
 }
