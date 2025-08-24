@@ -1,3 +1,6 @@
+Blammed (Erect) intro cutscene, Addition
+Philly Nice (Erect) intro cutscene, Addition
+Pico (Erect) intro cutscene, Addition
 South (Erect) intro cutscene (It's just the default one minus one change), Addition
 Spookeez (Erect) intro cutscene (It's just the default one LOL), Addition
 Daddy Dearest no longer stands with frozen demonic eyes in the Bopeebo (Default and Erect) Intro Cutscenes, Tweak

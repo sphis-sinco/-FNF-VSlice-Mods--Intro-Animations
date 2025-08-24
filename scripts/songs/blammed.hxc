@@ -35,7 +35,7 @@ class BlammedSong extends Song {
 			hasPlayedCutscene = true;
 
 			switch (PlayState.instance.currentVariation) {
-				case 'default':
+				case 'default', 'erect':
 					PlayState.instance.camHUD.visible = false;
 					event.cancel(); // CANCEL THE COUNTDOWN!
 					startBFCutsceneDefault();
