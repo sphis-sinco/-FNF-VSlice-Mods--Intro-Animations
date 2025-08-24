@@ -1,8 +1,19 @@
 {
-    "title": "Intro Animations",
-    "description": "Adds intro animations to each song",
-    "author": "Sphis",
-    "api_version": "0.7.3",
-    "mod_version": "3.0.0",
-    "license": "CC BY 4.0,MIT"
+        "title": "Intro Animations",
+        "description": "Adds intro animations to each song",
+        "contributors": [
+                {
+                        "name": "Sphis",
+			"role": "Programming, Art/Animation",
+			"url": "https://sphis-sinco.carrd.co"
+                },
+                {
+                        "name": "Djotta Flow",
+			"role": "Art/Animation",
+			"url": "https://www.youtube.com/@djotta11"
+                }
+        ],
+        "api_version": "0.7.3",
+        "mod_version": "3.0.0",
+        "license": "CC BY 4.0,MIT"
 }

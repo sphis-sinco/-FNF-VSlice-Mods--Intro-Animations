@@ -2,8 +2,19 @@
 <TextureAtlas imagePath="pico_shrug.png">
 	<!-- Created with Adobe Animate version 21.0.6.41649 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="Pico shrug0000" x="4" y="4" width="443" height="464"/>
-	<SubTexture name="Pico shrug0001" x="4" y="4" width="443" height="464"/>
-	<SubTexture name="Pico shrug0002" x="4" y="4" width="443" height="464"/>
-	<SubTexture name="Pico shrug0003" x="4" y="4" width="443" height="464"/>
+	<SubTexture name="Pico shrug0000" x="479" y="4" width="443" height="475" frameX="-8" frameY="0" frameWidth="468" frameHeight="475"/>
+	<SubTexture name="Pico shrug0001" x="479" y="4" width="443" height="475" frameX="-8" frameY="0" frameWidth="468" frameHeight="475"/>
+	<SubTexture name="Pico shrug0002" x="479" y="487" width="438" height="475" frameX="-7" frameY="0" frameWidth="468" frameHeight="475"/>
+	<SubTexture name="Pico shrug0003" x="479" y="487" width="438" height="475" frameX="-7" frameY="0" frameWidth="468" frameHeight="475"/>
+	<SubTexture name="Pico shrug0004" x="4" y="4" width="467" height="471" frameX="-1" frameY="-4" frameWidth="468" frameHeight="475"/>
+	<SubTexture name="Pico shrug0005" x="4" y="4" width="467" height="471" frameX="-1" frameY="-4" frameWidth="468" frameHeight="475"/>
+	<SubTexture name="Pico shrug0006" x="4" y="483" width="467" height="471" frameX="0" frameY="-4" frameWidth="468" frameHeight="475"/>
+	<SubTexture name="Pico shrug0007" x="4" y="483" width="467" height="471" frameX="0" frameY="-4" frameWidth="468" frameHeight="475"/>
+	<SubTexture name="Pico shrug0008" x="4" y="483" width="467" height="471" frameX="0" frameY="-4" frameWidth="468" frameHeight="475"/>
+	<SubTexture name="Pico shrug0009" x="4" y="483" width="467" height="471" frameX="0" frameY="-4" frameWidth="468" frameHeight="475"/>
+	<SubTexture name="Pico shrug0010" x="4" y="483" width="467" height="471" frameX="0" frameY="-4" frameWidth="468" frameHeight="475"/>
+	<SubTexture name="Pico shrug0011" x="4" y="483" width="467" height="471" frameX="0" frameY="-4" frameWidth="468" frameHeight="475"/>
+	<SubTexture name="Pico shrug0012" x="4" y="483" width="467" height="471" frameX="0" frameY="-4" frameWidth="468" frameHeight="475"/>
+	<SubTexture name="Pico shrug0013" x="4" y="483" width="467" height="471" frameX="0" frameY="-4" frameWidth="468" frameHeight="475"/>
+	<SubTexture name="Pico shrug0014" x="4" y="483" width="467" height="471" frameX="0" frameY="-4" frameWidth="468" frameHeight="475"/>
 </TextureAtlas>
