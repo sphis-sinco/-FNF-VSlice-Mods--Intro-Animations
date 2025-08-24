@@ -5,7 +5,7 @@
         "renderType": "multisparrow",
         "animations": [
                 {
-                        "name": "intro-cutscene",
+                        "name": "intro",
                         "prefix": "Parent Christmas Intro",
                         "offsets": [0, 0]
                 },
