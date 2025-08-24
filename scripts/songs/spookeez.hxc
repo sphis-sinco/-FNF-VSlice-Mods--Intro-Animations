@@ -66,6 +66,7 @@ class SpookeezSong extends Song {
 		var dadPoint = currentStage.getDad().cameraFocusPoint;
 		PlayState.instance.tweenCameraToPosition(gfPoint.x, gfPoint.y, 0, FlxEase.quadInOut);
 		PlayState.instance.tweenCameraZoom(currentStage.camZoom * 0.75, 1, true, FlxEase.bounceOut);
+		FunkinSound.playOnce(Paths.sound('week2/spooky-cheer'), 1);
 
 		new FlxTimer().start(1, function(tmr) {
 			currentStage.getDad().playAnimation('idle');
