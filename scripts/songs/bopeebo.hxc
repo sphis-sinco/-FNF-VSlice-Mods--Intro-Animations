@@ -71,7 +71,6 @@ class BopeeboSong extends Song {
 			return;
 		}
 
-		var frownDad:BaseCharacter = new SparrowCharacter('dad-frown');
 		var ogDad:BaseCharacter = currentStage.getDad();
 
 		currentStage.getDad().playAnimation('idle-hold');
@@ -108,7 +107,6 @@ class BopeeboSong extends Song {
 		});
 		new FlxTimer().start(8, function(tmr) {
 			trace('Begin countdown');
-			frownDad.visible = false;
 			currentStage.getDad().visible = true;
 			PlayState.instance.startCountdown();
 			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
