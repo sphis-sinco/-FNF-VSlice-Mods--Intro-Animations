@@ -35,11 +35,10 @@ class PicoSong extends Song {
 		if (!hasPlayedCutscene) {
 			hasPlayedCutscene = true;
 
-			event.cancel(); // CANCEL THE COUNTDOWN!
-
 			switch (PlayState.instance.currentVariation) {
 				case 'default':
 					PlayState.instance.camHUD.visible = false;
+					event.cancel(); // CANCEL THE COUNTDOWN!
 					startBFCutsceneDefault();
 			}
 		}
