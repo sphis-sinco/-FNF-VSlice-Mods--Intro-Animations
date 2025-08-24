@@ -11,6 +11,9 @@ import funkin.save.Save;
 import funkin.effects.RetroCameraFade;
 import funkin.audio.FunkinSound;
 
+import funkin.play.character.BaseCharacter;
+import funkin.play.character.SparrowCharacter;
+
 class BopeeboSong extends Song {
 	var hasPlayedCutscene:Bool;
 
@@ -64,6 +67,11 @@ class BopeeboSong extends Song {
 			return;
 		}
 
+		var frownDad:BaseCharacter = new SparrowCharacter('dad-frown');
+		var ogDad:BaseCharacter = currentStage.getDad();
+
+		currentStage.getDad().playAnimation('idle-hold');
+		
 		new FlxTimer().start(1, function(tmr) {
 			trace('Focusing camera on player.');
 			var bfPoint = currentStage.getBoyfriend().cameraFocusPoint;
@@ -81,6 +89,9 @@ class BopeeboSong extends Song {
 		new FlxTimer().start(4, function(tmr) {
 			trace('Focusing camera on opponent.');
 			var dadPoint = currentStage.getDad().cameraFocusPoint;
+
+			currentStage.getDad().playAnimation('frown-hold');
+
 			PlayState.instance.tweenCameraToPosition(dadPoint.x, dadPoint.y, 2, FlxEase.quadInOut);
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.15, 2, true, FlxEase.quadInOut);
 		});
@@ -93,6 +104,8 @@ class BopeeboSong extends Song {
 		});
 		new FlxTimer().start(8, function(tmr) {
 			trace('Begin countdown');
+			frownDad.visible = false;
+			currentStage.getDad().visible = true;
 			PlayState.instance.startCountdown();
 		});
 	}

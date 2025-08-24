@@ -3,6 +3,7 @@
         "name": "Daddy Dearest (Frown)",
         "assetPath": "characters/dad_frown",
         "singTime": 8.0,
+        "renderType": "sparrow",
         "animations": [
                 {
                         "name": "frown",
