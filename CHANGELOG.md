@@ -1,5 +1,5 @@
-High (Erect) intro cutscene, Addition
-Satin Panties (Erect) intro cutscene, Addition
-MILF (Default) intro cutscene, Addition
-High (Default) intro cutscene, Addition
-Satin Panties (Default) intro cutscene, Addition
+Eggnog (Erect) intro cutscene, Addition
+Cocoa (Erect) intro cutscene, Addition
+Winter Horrorland (Default) intro cutscene, Addition
+Eggnog (Default) intro cutscene, Addition
+Cocoa (Default) intro cutscene, Addition
