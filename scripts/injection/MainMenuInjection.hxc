@@ -1,0 +1,62 @@
+import StringTools;
+import flixel.FlxG;
+import funkin.Paths;
+import flixel.FlxSprite;
+import funkin.util.Constants;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
+import funkin.util.ReflectUtil;
+import funkin.audio.FunkinSound;
+import funkin.graphics.FunkinSprite;
+import funkin.modding.module.Module;
+import funkin.modding.base.ScriptedMusicBeatState;
+import flixel.addons.transition.FlxTransitionableState;
+
+import funkin.input.Cursor;
+
+import flixel.FlxCamera;
+import flixel.FlxG;
+
+import polymod.Polymod;
+
+class MainMenuInjection extends Module {
+	
+    var yourMainMenuText = "Intro Animations v";
+    var versionString = "3.0.0"
+	var currentState = "";
+
+    function new() {
+		super("main-menu-inject");
+	}
+    
+	function onStateChangeEnd() {
+		super.onStateChangeEnd();
+		var daThing = ReflectUtil.getClassNameOf(FlxG.state).split(".");
+
+		currentState = daThing[daThing.length - 1];
+		if (currentState == "MainMenuState") {
+            
+			FlxG.state.leftWatermarkText.text += "\n" + yourMainMenuText + versionString;
+			FlxG.state.leftWatermarkText.y -= 15;
+        }
+	}
+
+	function onUpdate(event) {
+        super.onUpdate(event);
+	
+        if (currentState == "MainMenuState") {
+            if (!StringTools.contains(FlxG.state.leftWatermarkText.text, "Friday Night Funkin'")) {
+                FlxG.state.leftWatermarkText.text = StringTools.replace(
+                    FlxG.state.leftWatermarkText.text,
+                    Constants.VERSION,
+                    "Friday Night Funkin' " + Constants.VERSION
+                );
+            }
+            FlxG.state.leftWatermarkText.alignment = 'left';
+
+            var array = FlxG.state.leftWatermarkText.text.split("\n");
+            array.sort(function(a, b) return a.length - b.length);
+            FlxG.state.leftWatermarkText.text = array.join("\n");
+        }
+    }
+}
