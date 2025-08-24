@@ -1,0 +1,109 @@
+import flixel.tweens.FlxEase;
+import funkin.graphics.FunkinSprite;
+import flixel.tweens.FlxTween;
+import funkin.play.cutscene.dialogue.DialogueBox;
+import funkin.play.PlayState;
+import funkin.play.PlayStatePlaylist;
+import funkin.play.song.Song;
+import flixel.FlxG;
+import flixel.FlxSprite;
+import flixel.util.FlxTimer;
+import funkin.save.Save;
+import funkin.effects.RetroCameraFade;
+
+import funkin.audio.FunkinSound;
+
+class TutorialSong extends Song {
+	var hasPlayedCutscene:Bool;
+
+	public function new() {
+		super('tutorial');
+
+		hasPlayedCutscene = false;
+	}
+
+	public override function onCountdownStart(event:CountdownScriptEvent):Void {
+		super.onCountdownStart(event);
+
+		if (!hasPlayedCutscene) {
+			trace('Pausing countdown to play a cutscene (`tutorial`)');
+
+			hasPlayedCutscene = true;
+
+			event.cancel(); // CANCEL THE COUNTDOWN!
+
+			switch (PlayState.instance.currentVariation) {
+				case 'default':
+					PlayState.instance.camHUD.visible = false;
+					startBFCutsceneDefault();
+			}
+		}
+	}
+
+	function startBFCutsceneDefault() {
+		var currentStage = PlayState.instance.currentStage;
+
+		if (currentStage.getBoyfriend() == null) {
+			trace('No BF to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+
+		if (currentStage.getDad() == null) {
+			trace('No dad to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+
+		var dadPoint = currentStage.getDad().cameraFocusPoint;
+		PlayState.instance.tweenCameraToPosition(dadPoint.x, dadPoint.y, 0, FlxEase.bounceOut);
+		PlayState.instance.tweenCameraZoom(currentStage.camZoom * .9, 1, true, FlxEase.bounceOut);
+
+		FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 1);
+		new FlxTimer().start(1, function(tmr) {
+			trace('Focusing camera on player.');
+			var bfPoint = currentStage.getBoyfriend().cameraFocusPoint;
+			PlayState.instance.tweenCameraToPosition(bfPoint.x, bfPoint.y, 2, FlxEase.quadInOut);
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.25, 2, true, FlxEase.quadInOut);
+		});
+
+		new FlxTimer().start(3, function(tmr) {
+			currentStage.getBoyfriend().playAnimation('hey');
+			currentStage.getDad().playAnimation('cheer');
+
+			FunkinSound.playOnce(Paths.sound('week1/hey'), 1);
+		});
+
+		new FlxTimer().start(5, function(tmr) {
+			currentStage.getBoyfriend().playAnimation('idle');
+			currentStage.getDad().playAnimation('idle');
+		});
+
+		new FlxTimer().start(4, function(tmr) {
+			trace('Focusing camera on opponent.');
+			var dadPoint = currentStage.getDad().cameraFocusPoint;
+
+			PlayState.instance.tweenCameraToPosition(dadPoint.x - 160, dadPoint.y - 160, 2, FlxEase.quadInOut);
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.5, 2, true, FlxEase.quadInOut);
+		});
+
+		new FlxTimer().start(5, function(tmr) {
+			trace('Begin countdown');
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom, 2, true, FlxEase.quadInOut);
+			PlayState.instance.startCountdown();
+			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
+		});
+	}
+
+	public override function onDestroy(event:ScriptEvent) {
+		hasPlayedCutscene = false;
+	}
+
+	public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool {
+		return false;
+	}
+
+	public override function listAltInstrumentalIds(difficultyId:String, variationId:String):Array<String> {
+		return [];
+	}
+}
