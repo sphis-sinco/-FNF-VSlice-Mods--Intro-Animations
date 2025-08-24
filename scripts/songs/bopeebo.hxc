@@ -74,8 +74,6 @@ class BopeeboSong extends Song {
 			return;
 		}
 
-		var ogDad:BaseCharacter = currentStage.getDad();
-
 		currentStage.getDad().playAnimation('idle-hold');
 		
 		FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 1);
@@ -103,14 +101,9 @@ class BopeeboSong extends Song {
 		});
 
 		new FlxTimer().start(8, function(tmr) {
-			// trace('Focusing camera on girlfriend.');
-			var gfPoint = currentStage.getGirlfriend().cameraFocusPoint;
-			// PlayState.instance.tweenCameraToPosition(gfPoint.x, gfPoint.y, 2, FlxEase.quadInOut);
-			PlayState.instance.tweenCameraZoom(currentStage.camZoom, 2, true, FlxEase.quadInOut);
-		});
-		new FlxTimer().start(8, function(tmr) {
 			trace('Begin countdown');
-			currentStage.getDad().visible = true;
+			currentStage.getDad().playAnimation('smirk');
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom, 2, true, FlxEase.quadInOut);
 			PlayState.instance.startCountdown();
 			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
 		});

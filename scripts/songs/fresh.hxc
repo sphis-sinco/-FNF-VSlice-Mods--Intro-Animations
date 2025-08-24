@@ -137,6 +137,9 @@ class FreshSong extends Song {
 
 		new FlxTimer().start((doinGood) ? 5 : 8, function(tmr) {
 			trace('Begin countdown');
+			if (doinGood)
+				currentStage.getDad().playAnimation('smirk');
+
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom, 2, true, FlxEase.quadInOut);
 
 			PlayState.instance.tweenCameraToPosition(dadPoint.x, dadPoint.y, 2, FlxEase.quadInOut);

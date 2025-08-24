@@ -1,3 +1,4 @@
+Daddy (Dearest) now smirks at the end of the Bopeebo and Fresh (Default and Erect) intro cutscenes, Tweak
 Dadbattle (Erect) intro cutscene, Addition
 Fresh (Erect) intro cutscene, Addition
 Bopeebo (Erect) intro cutscene, Addition
