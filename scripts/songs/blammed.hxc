@@ -101,7 +101,7 @@ class BlammedSong extends Song {
 			PlayState.instance.tweenCameraToPosition(gfPoint.x, gfPoint.y, 2, FlxEase.sineInOut);
 		});
 
-		new FlxTimer().start(4, function(tmr) {
+		new FlxTimer().start(2, function(tmr) {
 			trace('Begin countdown');
 
 			currentStage.getDad().destroy();
