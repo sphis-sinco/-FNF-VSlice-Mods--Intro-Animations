@@ -1,0 +1,118 @@
+{
+        "version": "1.0.0",
+        "name": "Daddy Dearest (Ew)",
+        "assetPath": "characters/daddyDearest",
+        "singTime": 8.0,
+        "renderType": "multisparrow",
+        "healthIcon": {
+                "id": "dad"
+        },
+        "animations": [
+                {
+                        "name": "frown",
+                        "prefix": "Dad frown",
+                        "offsets": [0, 0],
+                        "assetPath": "characters/dad_frown"
+                },
+                {
+                        "name": "frown-hold-frozen",
+                        "prefix": "Dad frown",
+                        "looped": true,
+                        "frameIndices": [11, 11],
+                        "offsets": [0, 0],
+                        "assetPath": "characters/dad_frown"
+                },
+                {
+                        "name": "frown-hold",
+                        "prefix": "Dad frown",
+                        "looped": true,
+                        "frameIndices": [11, 12],
+                        "offsets": [0, 0],
+                        "assetPath": "characters/dad_frown"
+                },
+                {
+                        "name": "smirk",
+                        "prefix": "Dad _big smile",
+                        "offsets": [-6, 0],
+                        "assetPath": "characters/dad_smirk"
+                },
+                {
+                        "name": "smirk-hold",
+                        "prefix": "Dad _big smile",
+                        "looped": true,
+                        "frameIndices": [16, 17, 18, 19],
+                        "offsets": [-6, 0],
+                        "assetPath": "characters/dad_smirk"
+                },
+                {
+                        "name": "idle",
+                        "assetPath": "characters/dad_ew",
+                        "prefix": "Dad ew",
+                        "offsets": [0, 0]
+                },
+                {
+                        "name": "idle-hold",
+                        "prefix": "Dad ew",
+                        "assetPath": "characters/dad_ew",
+                        "looped": true,
+                        "frameIndices": [11, 12],
+                        "offsets": [0, 0]
+                },
+                {
+                        "name": "singLEFT",
+                        "prefix": "singLEFT",
+                        "offsets": [-10, 10]
+                },
+                {
+                        "name": "singLEFT-hold",
+                        "prefix": "singLEFT",
+                        "looped": true,
+                        "frameIndices": [
+                                3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16
+                        ],
+                        "offsets": [-10, 10]
+                },
+                {
+                        "name": "singDOWN",
+                        "prefix": "singDOWN",
+                        "offsets": [0, -30]
+                },
+                {
+                        "name": "singDOWN-hold",
+                        "prefix": "singDOWN",
+                        "looped": true,
+                        "frameIndices": [
+                                3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16
+                        ],
+                        "offsets": [0, -30]
+                },
+                {
+                        "name": "singUP",
+                        "prefix": "singUP",
+                        "offsets": [-6, 50]
+                },
+                {
+                        "name": "singUP-hold",
+                        "prefix": "singUP",
+                        "looped": true,
+                        "frameIndices": [
+                                3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16
+                        ],
+                        "offsets": [-6, 50]
+                },
+                {
+                        "name": "singRIGHT",
+                        "prefix": "singRIGHT",
+                        "offsets": [0, 27]
+                },
+                {
+                        "name": "singRIGHT-hold",
+                        "prefix": "singRIGHT",
+                        "looped": true,
+                        "frameIndices": [
+                                3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16
+                        ],
+                        "offsets": [0, 27]
+                }
+        ]
+}
