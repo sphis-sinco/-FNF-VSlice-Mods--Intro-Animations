@@ -91,10 +91,11 @@ class UghSong extends Song {
 		var dadPoint = currentStage.getDad().cameraFocusPoint;
 		FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 1);
 		PlayState.instance.tweenCameraToPosition(bfPoint.x, bfPoint.y, 0, FlxEase.quadInOut);
+		
+		currentStage.getGirlfriend().dance();
+		
 		new FlxTimer().start(1, function(tmr) {
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.2, 2, true, FlxEase.quadInOut);
-
-			currentStage.getGirlfriend().dance();
 		});
 
 		new FlxTimer().start(3, function(tmr) {
