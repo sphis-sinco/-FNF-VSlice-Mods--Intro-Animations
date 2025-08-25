@@ -68,6 +68,12 @@ class UghSong extends Song {
 		PlayState.instance.disableKeys = true;
 		var currentStage = PlayState.instance.currentStage;
 
+		if (currentStage.getBoyfriend() == null) {
+			trace('No BF to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+
 		if (currentStage.getDad() == null) {
 			trace('No dad to focus on. Cutscene won\'t work properly. Skipping...');
 			PlayState.instance.startCountdown();
@@ -75,12 +81,22 @@ class UghSong extends Song {
 		}
 		
 
+		var bfPoint = currentStage.getBoyfriend().cameraFocusPoint;
+		var dadPoint = currentStage.getDad().cameraFocusPoint;
 		FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 1);
+		PlayState.instance.tweenCameraToPosition(bfPoint.x, bfPoint.y, 0, FlxEase.quadInOut);
 		new FlxTimer().start(1, function(tmr) {
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.2, 2, true, FlxEase.quadInOut);
 		});
 
 		new FlxTimer().start(3, function(tmr) {
+			currentStage.getDad().playAnimation('burpSmileLong');
+
+			FunkinSound.playOnce(Paths.sound('pico/burp'), 1);
+			PlayState.instance.tweenCameraToPosition(dadPoint.x, dadPoint.y, 4, FlxEase.quadInOut);
+		});
+
+		new FlxTimer().start(4, function(tmr) {
 			currentStage.getDad().playAnimation('ugh');
 
 			FunkinSound.playOnce(Paths.sound('week7/ugh'), 1);
