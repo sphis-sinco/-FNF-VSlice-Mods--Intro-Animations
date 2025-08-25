@@ -192,13 +192,13 @@
     },
     {
       "name": "pocket",
-      "assetPath": "characters/pico_pocket",
+      "assetPath": "characters/pico_pockets",
       "prefix": "Pico anim back",
       "offsets": [0, 0]
     },
     {
       "name": "pocket-frozen",
-      "assetPath": "characters/pico_pocket",
+      "assetPath": "characters/pico_pockets",
       "prefix": "Pico anim back",
       "frameIndices": [0],
       "looped": true,
