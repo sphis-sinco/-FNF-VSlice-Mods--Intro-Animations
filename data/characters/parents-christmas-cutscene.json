@@ -3,6 +3,9 @@
         "name": "Mommy and Daddy (Festive)",
         "assetPath": "characters/mom_dad_christmas_assets",
         "renderType": "multisparrow",
+        "healthIcon": {
+                "id": "parents-christmas"
+        },
         "animations": [
                 {
                         "name": "intro",
