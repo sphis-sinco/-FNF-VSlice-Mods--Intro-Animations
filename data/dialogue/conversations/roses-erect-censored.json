@@ -25,16 +25,7 @@
                         "box": "roses",
                         "boxAnimation": "angrySenpai",
 
-                        "text": ["Not bad for an ugly worm."]
-                },
-                {
-                        "speaker": "senpai-angry",
-                        "speakerAnimation": "talk",
-                        "box": "roses",
-                        "boxAnimation": "idle",
-
-                        "text": ["But this time I'm gonna make you scream..."],
-                        "speed": 0.5
+                        "text": ["Not bad shrimp!"]
                 },
                 {
                         "speaker": "senpai-angry",
@@ -43,9 +34,8 @@
                         "boxAnimation": "idle",
 
                         "text": [
-                                "Almost as loud as I'll make your girlfriend scream later tonight, you fat midget."
-                        ],
-                        "speed": 0.5
+                                "But this time I'm sure to be victorious in my efforts!"
+                        ]
                 },
                 {
                         "speaker": "bf-pixel",
@@ -53,7 +43,7 @@
                         "box": "roses",
                         "boxAnimation": "idle",
 
-                        "text": ["Bop beep be be skdoo bep"]
+                        "text": ["Bo bo bee ba!"]
                 }
         ]
 }
