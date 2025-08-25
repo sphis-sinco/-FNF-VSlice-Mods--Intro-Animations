@@ -90,7 +90,7 @@ class UghSong extends Song {
 		});
 
 		new FlxTimer().start(3, function(tmr) {
-			currentStage.getDad().playAnimation('burpSmileLong');
+			currentStage.getBoyfriend().playAnimation('burpSmileLong');
 
 			FunkinSound.playOnce(Paths.sound('pico/burp'), 1);
 			PlayState.instance.tweenCameraToPosition(dadPoint.x, dadPoint.y, 4, FlxEase.quadInOut);
