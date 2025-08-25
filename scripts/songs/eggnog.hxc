@@ -74,8 +74,8 @@ class EggnogSong extends Song {
 		super.onCountdownStart(event);
 		trace(PlayState.instance.currentVariation);
 
-		if (!hasPlayedCutscene) {
-			hasPlayedCutscene = true;
+		if (!hasPlayedIntroCutscene) {
+			hasPlayedIntroCutscene = true;
 
 			switch (PlayState.instance.currentVariation) {
 				case 'default', 'erect':
