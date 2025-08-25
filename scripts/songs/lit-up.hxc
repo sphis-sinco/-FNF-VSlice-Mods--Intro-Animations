@@ -4,6 +4,11 @@ import funkin.play.cutscene.VideoCutscene;
 import funkin.save.Save;
 import funkin.play.PlayStatePlaylist;
 
+import flixel.util.FlxTimer;
+
+import funkin.play.character.CharacterType;
+import funkin.play.character.CharacterDataParser;
+
 class LitUpSong extends Song {
 	public function new() {
 		super('lit-up');
@@ -12,7 +17,27 @@ class LitUpSong extends Song {
 	public override function onCountdownStart(event:CountdownScriptEvent):Void {
 		super.onCountdownStart(event);
 		
-		PlayState.instance.currentStage.getBoyfriend().playAnimation('intro1', true);
+		var offsetX = -30;
+
+		PlayState.instance.currentStage.getBoyfriend().destroy();
+		character = CharacterDataParser.fetchCharacter('pico-cutscene');
+		PlayState.instance.currentStage.addCharacter(character, CharacterType.BF);
+		PlayState.instance.currentStage.refresh();
+		PlayState.instance.currentStage.getBoyfriend().x += offsetX;
+		PlayState.instance.currentStage.getBoyfriend().playAnimation('pissed');
+
+		new FlxTimer().start(2, function(tmr) {
+			PlayState.instance.currentStage.getBoyfriend().playAnimation('unpissed', true);
+		});
+
+		new FlxTimer().start(4, function(tmr) {
+			PlayState.instance.currentStage.getBoyfriend().destroy();
+			character = CharacterDataParser.fetchCharacter('pico-playable');
+			PlayState.instance.currentStage.addCharacter(character, CharacterType.BF);
+			PlayState.instance.currentStage.refresh();
+			PlayState.instance.currentStage.getBoyfriend().x -= offsetX;
+			PlayState.instance.currentStage.getBoyfriend().playAnimation('pissed');
+		});
 	}
 
 	public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool {
