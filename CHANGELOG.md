@@ -1,1 +1,1 @@
-Ugh (Erect) intro animation, Addition
+(Mobile) Dadbattle (BF varients) intro cutscene ending zoom, Bugfix
