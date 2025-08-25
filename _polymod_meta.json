@@ -11,9 +11,13 @@
                         "name": "Djotta Flow",
 			"role": "Art/Animation",
 			"url": "https://www.youtube.com/@djotta11"
+                },
+                {
+                        "name": "Loaf",
+			"role": "Art/Animation"
                 }
         ],
         "api_version": "0.7.3",
-        "mod_version": "8.0.0",
+        "mod_version": "9.0.0",
         "license": "CC BY 4.0,MIT"
 }

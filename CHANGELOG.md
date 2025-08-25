@@ -1,7 +1,3 @@
-Week 7 story mode softlock, Bugfix
-Guns (Pico Nux) Intro Cutscene, Addition
-Ugh (Pico Nux) Intro Cutscene, Addition
-2hot (Default) Intro Cutscene, Addition
-Lit up (Default) Intro Cutscene, Addition
-Darnell (Erect) Intro Cutscene, Addition
-Darnell (Default) Ingame cutscenes plays in freeplay, Tweak
+The spraycan in the Darnell and 2hot intro cutscenes now have the same shader as the opponent, Tweak
+Lit up (Boyfriend Mix) Intro Cutscene, Addition
+Darnell (Boyfriend Mix) Intro Cutscene, Addition

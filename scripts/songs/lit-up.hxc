@@ -9,6 +9,8 @@ import flixel.util.FlxTimer;
 import funkin.play.character.CharacterType;
 import funkin.play.character.CharacterDataParser;
 
+import funkin.audio.FunkinSound;
+
 class LitUpSong extends Song {
 	public function new() {
 		super('lit-up');
@@ -16,28 +18,39 @@ class LitUpSong extends Song {
 	
 	public override function onCountdownStart(event:CountdownScriptEvent):Void {
 		super.onCountdownStart(event);
-		
-		var offsetX = -30;
 
-		PlayState.instance.currentStage.getBoyfriend().destroy();
-		character = CharacterDataParser.fetchCharacter('pico-cutscene');
-		PlayState.instance.currentStage.addCharacter(character, CharacterType.BF);
-		PlayState.instance.currentStage.refresh();
-		PlayState.instance.currentStage.getBoyfriend().x += offsetX;
-		PlayState.instance.currentStage.getBoyfriend().playAnimation('pissed');
+		if (PlayState.instance.currentVariation == 'bf')
+		{
 
-		new FlxTimer().start(2, function(tmr) {
-			PlayState.instance.currentStage.getBoyfriend().playAnimation('unpissed', true);
-		});
+			new FlxTimer().start(.1, function(tmr) {
+				PlayState.instance.currentStage.getBoyfriend().playAnimation('hey', true);
 
-		new FlxTimer().start(4, function(tmr) {
+				FunkinSound.playOnce(Paths.sound('week1/hey'), 1);
+			});
+
+		} else {
+			var offsetX = -30;
+
 			PlayState.instance.currentStage.getBoyfriend().destroy();
-			character = CharacterDataParser.fetchCharacter('pico-playable');
+			character = CharacterDataParser.fetchCharacter('pico-cutscene');
 			PlayState.instance.currentStage.addCharacter(character, CharacterType.BF);
 			PlayState.instance.currentStage.refresh();
-			PlayState.instance.currentStage.getBoyfriend().x -= offsetX;
+			PlayState.instance.currentStage.getBoyfriend().x += offsetX;
 			PlayState.instance.currentStage.getBoyfriend().playAnimation('pissed');
-		});
+
+			new FlxTimer().start(2, function(tmr) {
+				PlayState.instance.currentStage.getBoyfriend().playAnimation('unpissed', true);
+			});
+
+			new FlxTimer().start(4, function(tmr) {
+				PlayState.instance.currentStage.getBoyfriend().destroy();
+				character = CharacterDataParser.fetchCharacter('pico-playable');
+				PlayState.instance.currentStage.addCharacter(character, CharacterType.BF);
+				PlayState.instance.currentStage.refresh();
+				PlayState.instance.currentStage.getBoyfriend().x -= offsetX;
+				PlayState.instance.currentStage.getBoyfriend().playAnimation('pissed');
+			});
+		};
 	}
 
 	public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool {
