@@ -115,26 +115,34 @@ class FreshSong extends Song {
 		currentStage.getGirlfriend().dance();
 		
 		new FlxTimer().start(1, function(tmr) {
+			currentStage.getDad().playAnimation('idle-hold');
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.5, 2, true, FlxEase.quadInOut);
 		});
 
 		new FlxTimer().start(3, function(tmr) {
 			currentStage.getBoyfriend().playAnimation('burpSmileLong');
-			currentStage.getDad().playAnimation('frown');
+			currentStage.getDad().destroy();
+			var character = CharacterDataParser.fetchCharacter('dad-cutscene-ew');
+			currentStage.addCharacter(character, CharacterType.DAD);
+			currentStage.refresh();
+			currentStage.getDad().playAnimation('idle');
 
 			FunkinSound.playOnce(Paths.sound('pico/burp'), 1);
 			PlayState.instance.tweenCameraToPosition(dadPoint.x, dadPoint.y, 4, FlxEase.quadInOut);
+
+			PlayState.instance.currentStage.getGirlfriend().playAnimation('laughCutscene', true);
+			FunkinSound.playOnce(Paths.sound('pico/nene_laugh'), 0.6);
 		});
 
 		new FlxTimer().start(5, function(tmr) {
 			trace('Begin countdown');
-				currentStage.getDad().playAnimation('smirk');
 
-			new FlxTimer().start(2, function(tmr) {
+			new FlxTimer().start(2.5, function(tmr) {
 				currentStage.getDad().destroy();
 				var character = CharacterDataParser.fetchCharacter('dad');
 				currentStage.addCharacter(character, CharacterType.DAD);
 				currentStage.refresh();
+				currentStage.getDad().playAnimation('singDOWN');
 			});
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1, 2, true, FlxEase.quadInOut);
 			PlayState.instance.startCountdown();
