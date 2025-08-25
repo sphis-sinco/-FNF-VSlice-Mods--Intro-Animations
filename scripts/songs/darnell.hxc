@@ -71,7 +71,6 @@ class DarnellSong extends Song {
 
 		if (!PlayStatePlaylist.isStoryMode) {
 			hasPlayedCutscene = true;
-			hasPlayedInGameCutscene = true;
 		}
 
 		if (hasPlayedCutscene && !hasPlayedInGameCutscene) {
