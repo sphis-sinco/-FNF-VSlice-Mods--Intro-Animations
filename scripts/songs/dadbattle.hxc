@@ -134,8 +134,7 @@ class DadBattleSong extends Song {
 			trace('Begin countdown');
 			if (doinGood)
 				currentStage.getDad().playAnimation('smirk');
-			if (FlxG.isMobile)
-				PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1, 2, true, FlxEase.quadInOut);
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1, 2, true, FlxEase.quadInOut);
 			PlayState.instance.startCountdown();
 			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
 		});
