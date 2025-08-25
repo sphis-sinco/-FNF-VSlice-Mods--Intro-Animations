@@ -43,12 +43,42 @@ class BopeeboSong extends Song {
 					PlayState.instance.camHUD.visible = false;
 					event.cancel(); // CANCEL THE COUNTDOWN!
 					startBFCutscene();
+				case 'pico':
+					startPicoCutscene(); // pico's will take place during the countdown
 			}
 		}
 		else {
 			PlayState.instance.isInCutscene = false;
 			PlayState.instance.disableKeys = false;
 		}
+	}
+
+	function startPicoCutscene()
+	{
+		var currentStage = PlayState.instance.currentStage;
+
+		if (currentStage.getBoyfriend() == null)
+		{
+			trace('No BF to focus on. Cutscene won\'t work properly. Skipping...');
+			return;
+		}
+
+		currentStage.getBoyfriend().destroy();
+		character = CharacterDataParser.fetchCharacter('pico-playable-cutscene');
+		currentStage.addCharacter(character, CharacterType.BF);
+		currentStage.refresh();
+		currentStage.getBoyfriend().playAnimation('pocket-frozen');
+
+		new FlxTimer().start(3, function(tmr) {
+			currentStage.getBoyfriend().playAnimation('pocket');
+		});
+		new FlxTimer().start(4, function(tmr) {
+			currentStage.getBoyfriend().destroy();
+			character = CharacterDataParser.fetchCharacter('pico-playable');
+			currentStage.addCharacter(character, CharacterType.BF);
+			currentStage.refresh();
+			currentStage.getBoyfriend().playAnimation('idle');
+		});
 	}
 
 	function startBFCutscene()
