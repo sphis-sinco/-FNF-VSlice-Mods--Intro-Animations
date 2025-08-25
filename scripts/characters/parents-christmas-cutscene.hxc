@@ -2,9 +2,9 @@ import funkin.play.character.MultiSparrowCharacter;
 import funkin.play.character.CharacterType;
 import funkin.play.PlayState;
 
-class ParentsChristmasCharacter extends MultiSparrowCharacter {
+class IntroCutsceneParentsChristmasCharacter extends MultiSparrowCharacter {
 	function new() {
-		super('parents-christmas');
+		super('parents-christmas-cutscene');
 	}
 
 	function onNoteHit(event:HitNoteScriptEvent) {
