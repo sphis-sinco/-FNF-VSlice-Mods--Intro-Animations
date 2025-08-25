@@ -65,11 +65,87 @@ class DadBattleSong extends Song {
 					PlayState.instance.camHUD.visible = false;
 					event.cancel(); // CANCEL THE COUNTDOWN!
 					startBFCutscene();
+				case 'pico':
+					PlayState.instance.camHUD.visible = false;
+					event.cancel(); // CANCEL THE COUNTDOWN!
+					startPicoCutscene();
 			}
 		} else {
 			PlayState.instance.isInCutscene = false;
 			PlayState.instance.disableKeys = false;
 		}
+	}
+
+	function startPicoCutscene() {
+		PlayState.instance.isInCutscene = true;
+		PlayState.instance.disableKeys = true;
+		var currentStage = PlayState.instance.currentStage;
+
+		if (currentStage.getBoyfriend() == null) {
+			trace('No BF to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+
+		if (currentStage.getDad() == null) {
+			trace('No dad to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+
+		if (currentStage.getGirlfriend() == null) {
+			trace('No GF to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+		
+		currentStage.getDad().destroy();
+		var character = CharacterDataParser.fetchCharacter('dad-cutscene');
+		currentStage.addCharacter(character, CharacterType.DAD);
+		currentStage.refresh();
+		currentStage.getDad().playAnimation('idle');
+
+		var bfPoint = currentStage.getBoyfriend().cameraFocusPoint;
+		var dadPoint = currentStage.getDad().cameraFocusPoint;
+		FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 1);
+		PlayState.instance.tweenCameraToPosition(bfPoint.x, bfPoint.y, 3, FlxEase.quadInOut);
+		
+		currentStage.getGirlfriend().dance();
+		
+		new FlxTimer().start(1, function(tmr) {
+			currentStage.getDad().playAnimation('idle-hold');
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.5, 2, true, FlxEase.quadInOut);
+		});
+
+		new FlxTimer().start(3, function(tmr) {
+			currentStage.getBoyfriend().playAnimation('burpSmileLong');
+			currentStage.getDad().destroy();
+			var character = CharacterDataParser.fetchCharacter('dad-cutscene-ew');
+			currentStage.addCharacter(character, CharacterType.DAD);
+			currentStage.refresh();
+			currentStage.getDad().playAnimation('idle');
+
+			FunkinSound.playOnce(Paths.sound('pico/burp'), 1);
+			PlayState.instance.tweenCameraToPosition(dadPoint.x, dadPoint.y, 4, FlxEase.quadInOut);
+
+			PlayState.instance.currentStage.getGirlfriend().playAnimation('laughCutscene', true);
+			FunkinSound.playOnce(Paths.sound('pico/nene_laugh'), 0.6);
+		});
+
+		new FlxTimer().start(5, function(tmr) {
+			trace('Begin countdown');
+
+			new FlxTimer().start(2.5, function(tmr) {
+				currentStage.getDad().destroy();
+				var character = CharacterDataParser.fetchCharacter('dad');
+				currentStage.addCharacter(character, CharacterType.DAD);
+				currentStage.refresh();
+				currentStage.getDad().playAnimation('singDOWN');
+			});
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1, 2, true, FlxEase.quadInOut);
+			PlayState.instance.startCountdown();
+			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
+		});
 	}
 
 	function startBFCutscene()
