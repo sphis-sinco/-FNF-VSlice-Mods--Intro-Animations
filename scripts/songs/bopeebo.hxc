@@ -111,6 +111,8 @@ class BopeeboSong extends Song {
 		new FlxTimer().start(8, function(tmr) {
 			trace('Begin countdown');
 			currentStage.getDad().playAnimation('smirk');
+			if (FlxG.isMobile)
+				PlayState.instance.tweenCameraToPosition(dadPoint.x , dadPoint.y, 2, FlxEase.quadInOut);
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom, 2, true, FlxEase.quadInOut);
 			PlayState.instance.startCountdown();
 			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
