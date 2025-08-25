@@ -4,6 +4,11 @@ import funkin.play.cutscene.VideoCutscene;
 import funkin.save.Save;
 import funkin.play.PlayStatePlaylist;
 
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
+import flixel.util.FlxTimer;
+import funkin.audio.FunkinSound;
+
 class UghSong extends Song {
 	var hasPlayedCutscene:Bool;
 
@@ -47,8 +52,8 @@ class UghSong extends Song {
 			if (PlayState.instance.currentVariation == 'erect')
 				ughErect();
 		} else {
-			PlayState.instance.isInCutscene = true;
-			PlayState.instance.disableKeys = true;
+			PlayState.instance.isInCutscene = false;
+			PlayState.instance.disableKeys = false;
 		}
 	}
 
