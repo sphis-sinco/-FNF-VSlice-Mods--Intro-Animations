@@ -44,6 +44,7 @@ class BopeeboSong extends Song {
 					event.cancel(); // CANCEL THE COUNTDOWN!
 					startBFCutscene();
 				case 'pico':
+					hasPlayedCutscene = false;
 					startPicoCutscene(); // pico's will take place during the countdown
 			}
 		}
