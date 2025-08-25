@@ -100,9 +100,9 @@ class BopeeboSong extends Song {
 			FunkinSound.playOnce(Paths.sound('week1/hey'), 1);
 		});
 
+		var dadPoint = currentStage.getDad().cameraFocusPoint;
 		new FlxTimer().start(4, function(tmr) {
 			trace('Focusing camera on opponent.');
-			var dadPoint = currentStage.getDad().cameraFocusPoint;
 
 			PlayState.instance.tweenCameraToPosition(dadPoint.x - 160, dadPoint.y - 160, 2, FlxEase.quadInOut);
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.5, 2, true, FlxEase.quadInOut);
