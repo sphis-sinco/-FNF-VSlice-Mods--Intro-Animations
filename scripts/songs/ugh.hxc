@@ -1,0 +1,107 @@
+import funkin.play.song.Song;
+import funkin.play.PlayState;
+import funkin.play.cutscene.VideoCutscene;
+import funkin.save.Save;
+import funkin.play.PlayStatePlaylist;
+
+class UghSong extends Song {
+	var hasPlayedCutscene:Bool;
+
+	public function new() {
+		super('ugh');
+
+		hasPlayedCutscene = false;
+	}
+
+	public override function listAltInstrumentalIds(difficultyId:String, variationId:String):Array<String> {
+		if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard') {
+			var hasBeatenPicoMix = Save.instance.hasBeatenSong(this.id, null, 'pico');
+
+			switch (variationId) {
+				case 'pico':
+					// return hasBeatenPicoMix ? [''] : [];
+					// No Pico mix on BF instrumental, sorry!
+					return [];
+				default:
+					return hasBeatenPicoMix ? ['pico'] : [];
+			}
+		}
+	}
+
+	public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool {
+		return false;
+	}
+
+	public override function onCountdownStart(event:CountdownScriptEvent):Void {
+		super.onCountdownStart(event);
+
+		if (!hasPlayedCutscene) {
+			trace('Pausing countdown to play a cutscene (`ugh`)');
+
+			hasPlayedCutscene = true;
+
+			event.cancel(); // CANCEL THE COUNTDOWN!
+
+			if (PlayState.instance.currentVariation == 'default' && !PlayStatePlaylist.isStoryMode)
+				startVideo();
+			if (PlayState.instance.currentVariation == 'erect')
+				ughErect();
+		} else {
+			PlayState.instance.isInCutscene = true;
+			PlayState.instance.disableKeys = true;
+		}
+	}
+
+	function startVideo() {
+		VideoCutscene.play(Paths.videos('ughCutscene'));
+	}
+
+	function ughErect() {
+		PlayState.instance.isInCutscene = true;
+		PlayState.instance.disableKeys = true;
+		var currentStage = PlayState.instance.currentStage;
+
+		if (currentStage.getDad() == null) {
+			trace('No dad to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+		
+
+		FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 1);
+		new FlxTimer().start(1, function(tmr) {
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.2, 2, true, FlxEase.quadInOut);
+		});
+
+		new FlxTimer().start(3, function(tmr) {
+			currentStage.getDad().playAnimation('ugh');
+
+			FunkinSound.playOnce(Paths.sound('week7/ugh'), 1);
+		});
+
+		new FlxTimer().start(5, function(tmr) {
+			trace('Begin countdown');
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1, 2, true, FlxEase.quadInOut);
+			PlayState.instance.startCountdown();
+			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
+		});
+	}
+
+	/**
+	 * Don't replay the cutscene between restarts.
+	 */
+	function onSongRetry(event:ScriptEvent) {
+		super.onSongRetry(event);
+
+		hasPlayedCutscene = true;
+	}
+
+	/**
+	 * Replay the cutscene after leaving the song.
+	 */
+	function onCreate(event:ScriptEvent):Void {
+		super.onCreate(event);
+
+		hasPlayedCutscene = false;
+	}
+}
