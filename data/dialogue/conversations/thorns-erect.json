@@ -25,7 +25,7 @@
                         "box": "thorns",
                         "boxAnimation": "enter",
 
-                        "text": ["...", "It's about time..."],
+                        "text": ["...", "\nIt's about time..."],
                         "speed": 1.0
                 },
                 {
@@ -44,7 +44,7 @@
 
                         "text": [
                                 "Care for one last duel for your life?",
-                                "It's not like either of you have a choice."
+                                "\nIt's not like either of you have a choice."
                         ]
                 }
         ]
