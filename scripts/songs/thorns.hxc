@@ -20,7 +20,7 @@ class ThornsSong extends Song {
 		super.onCountdownStart(event);
 
 		// Skip the cutscene unless we are in Story Mode.
-		if (!PlayStatePlaylist.isStoryMode)
+		if (!PlayStatePlaylist.isStoryMode && PlayState.instance.currentVariation != 'erect')
 			hasPlayedCutscene = true;
 
 		// Skip the cutscene if we're playtesting in the Chart Editor.
@@ -32,7 +32,10 @@ class ThornsSong extends Song {
 
 			hasPlayedCutscene = true;
 
-			startCutscene();
+			if (PlayState.instance.currentVariation != 'erect')
+				startCutscene();
+			else
+				startDialogue();
 			event.cancel(); // CANCEL THE COUNTDOWN!
 		}
 	}
