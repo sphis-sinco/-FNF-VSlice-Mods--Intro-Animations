@@ -1,3 +1,4 @@
+Week 7 story mode softlock, Bugfix
 Guns (Pico Nux) Intro Cutscene, Addition
 Ugh (Pico Nux) Intro Cutscene, Addition
 2hot (Default) Intro Cutscene, Addition

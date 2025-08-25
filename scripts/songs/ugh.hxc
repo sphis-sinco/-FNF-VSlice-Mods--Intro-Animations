@@ -49,10 +49,12 @@ class UghSong extends Song {
 
 			if (PlayState.instance.currentVariation == 'default' && !PlayStatePlaylist.isStoryMode)
 				startVideo();
-			if (PlayState.instance.currentVariation == 'erect')
+			else if (PlayState.instance.currentVariation == 'erect')
 				ughErect();
-			if (PlayState.instance.currentVariation == 'pico')
+			else if (PlayState.instance.currentVariation == 'pico')
 				ughPico();
+			else
+				PlayState.instance.startCountdown();
 		} else {
 			PlayState.instance.isInCutscene = false;
 			PlayState.instance.disableKeys = false;
