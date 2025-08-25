@@ -132,7 +132,7 @@ class TwoHOTSong extends Song {
 			PlayState.instance.currentStage.getDad().cameraFocusPoint.y
 		];
 
-		var cutsceneDelay:Float = 2 - 0.1;
+		var cutsceneDelay:Float = 2;
 
 		cutsceneMusic = FunkinSound.load(Paths.music("darnellCanCutscene/darnellCanCutscene", "weekend1"), true);
 		cutsceneMusic.volume = 1;
