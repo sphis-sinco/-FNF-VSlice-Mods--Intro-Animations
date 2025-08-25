@@ -1,1 +1,2 @@
-Week 5 Parent intro animations, Tweak
+Weekend 1 intro cutscene character checks, Addition
+Weekend 1 intro cutscene NOR, Bugfix

@@ -19,6 +19,12 @@ class LitUpSong extends Song {
 	public override function onCountdownStart(event:CountdownScriptEvent):Void {
 		super.onCountdownStart(event);
 
+		if (currentStage.getBoyfriend() == null)
+		{
+			trace('No BF to focus on. Cutscene won\'t work properly. Skipping...');
+			return;
+		}
+		
 		if (PlayState.instance.currentVariation == 'bf')
 		{
 
