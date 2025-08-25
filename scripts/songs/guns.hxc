@@ -1,0 +1,141 @@
+import funkin.play.song.Song;
+import funkin.play.PlayState;
+import funkin.play.cutscene.VideoCutscene;
+import funkin.save.Save;
+import funkin.play.PlayStatePlaylist;
+
+class GunsSong extends Song {
+	var hasPlayedCutscene:Bool;
+
+	public function new() {
+		super('guns');
+
+		hasPlayedCutscene = false;
+	}
+
+	public override function listAltInstrumentalIds(difficultyId:String, variationId:String):Array<String> {
+		if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard') {
+			var hasBeatenPicoMix = Save.instance.hasBeatenSong(this.id, null, 'pico');
+
+			switch (variationId) {
+				case 'pico':
+					// return hasBeatenPicoMix ? [''] : [];
+					// No Pico mix on BF instrumental, sorry!
+					return [];
+				default:
+					return hasBeatenPicoMix ? ['pico'] : [];
+			}
+		}
+	}
+
+	public override function onCountdownStart(event:CountdownScriptEvent):Void {
+		super.onCountdownStart(event);
+
+		if (PlayState.instance.currentVariation == 'default'){
+
+			if (!PlayStatePlaylist.isStoryMode)
+				hasPlayedCutscene = true;
+
+			if (!hasPlayedCutscene) {
+				trace('Pausing countdown to play a video cutscene (`guns`)');
+
+				hasPlayedCutscene = true;
+
+				event.cancel(); // CANCEL THE COUNTDOWN!
+
+				startVideo();
+			}
+		}
+
+		if (PlayState.instance.currentVariation == 'pico'){
+
+			if (!hasPlayedCutscene) {
+				trace('Pausing countdown to play a cutscene (`guns`)');
+
+				hasPlayedCutscene = true;
+
+				event.cancel(); // CANCEL THE COUNTDOWN!
+
+				gunsPico();
+			}
+		}
+	}
+
+	function gunsPico() {
+		PlayState.instance.isInCutscene = true;
+		PlayState.instance.disableKeys = true;
+		var currentStage = PlayState.instance.currentStage;
+
+		if (currentStage.getBoyfriend() == null) {
+			trace('No BF to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+
+		if (currentStage.getDad() == null) {
+			trace('No dad to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+
+		if (currentStage.getGirlfriend() == null) {
+			trace('No GF to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+		
+
+		var bfPoint = currentStage.getBoyfriend().cameraFocusPoint;
+		var dadPoint = currentStage.getDad().cameraFocusPoint;
+		FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 1);
+		PlayState.instance.tweenCameraToPosition(bfPoint.x, bfPoint.y, 0, FlxEase.quadInOut);
+		
+		currentStage.getGirlfriend().dance();
+		
+		new FlxTimer().start(1, function(tmr) {
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.2, 2, true, FlxEase.quadInOut);
+		});
+
+		new FlxTimer().start(3, function(tmr) {
+			currentStage.getBoyfriend().playAnimation('burpSmileLong');
+
+			FunkinSound.playOnce(Paths.sound('pico/burp'), 1);
+			PlayState.instance.tweenCameraToPosition(dadPoint.x, dadPoint.y, 4, FlxEase.quadInOut);
+		});
+
+		new FlxTimer().start(4, function(tmr) {
+			currentStage.getDad().playAnimation('ugh');
+
+			FunkinSound.playOnce(Paths.sound('week7/ugh'), 1);
+		});
+
+		new FlxTimer().start(5, function(tmr) {
+			trace('Begin countdown');
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1, 2, true, FlxEase.quadInOut);
+			PlayState.instance.startCountdown();
+			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
+		});
+	}
+
+	function startVideo() {
+		VideoCutscene.play(Paths.videos('gunsCutscene'));
+	}
+
+	/**
+	 * Don't replay the cutscene between restarts.
+	 */
+	function onSongRetry(event:ScriptEvent) {
+		super.onSongRetry(event);
+
+		hasPlayedCutscene = true;
+	}
+
+	/**
+	 * Replay the cutscene after leaving the song.
+	 */
+	function onCreate(event:ScriptEvent):Void {
+		super.onCreate(event);
+
+		hasPlayedCutscene = false;
+	}
+}
