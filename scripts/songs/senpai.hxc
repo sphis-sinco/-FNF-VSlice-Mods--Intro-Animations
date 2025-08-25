@@ -29,7 +29,7 @@ class SenpaiSong extends Song {
 		super.onCountdownStart(event);
 
 		// Skip the cutscene unless we are in Story Mode, or Pico Mix specifically.
-		if (PlayState.instance.currentVariation != 'pico' && !PlayStatePlaylist.isStoryMode)
+		if (PlayState.instance.currentVariation != 'pico' && PlayState.instance.currentVariation != 'erect' && !PlayStatePlaylist.isStoryMode)
 			hasPlayedCutscene = true;
 
 		// Skip the cutscene if we're playtesting in the Chart Editor.
