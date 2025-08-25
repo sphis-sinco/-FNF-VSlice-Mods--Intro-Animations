@@ -72,9 +72,10 @@ class CocoaSong extends Song {
 			return;
 		}
 
+		currentStage.getDad().playAnimation('intro');
+
 		FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 1);
 		new FlxTimer().start(1, function(tmr) {
-			currentStage.getDad().playAnimation('intro');
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.2, 2, true, FlxEase.quadInOut);
 		});
 

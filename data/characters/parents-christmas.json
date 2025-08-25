@@ -7,7 +7,7 @@
                 {
                         "name": "intro",
                         "prefix": "Parent Christmas Intro",
-                        "assetPath": "characters/parents_intro-cheer",
+                        "assetPath": "characters/parents_intro",
                         "offsets": [0, 0]
                 },
                 {
