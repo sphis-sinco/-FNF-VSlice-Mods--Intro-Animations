@@ -8,6 +8,12 @@ class LitUpSong extends Song {
 	public function new() {
 		super('lit-up');
 	}
+	
+	public override function onCountdownStart(event:CountdownScriptEvent):Void {
+		super.onCountdownStart(event);
+		
+		PlayState.instance.currentStage.getBoyfriend().playAnimation('intro1', true);
+	}
 
 	public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool {
 		if (currentVariation == 'bf')
