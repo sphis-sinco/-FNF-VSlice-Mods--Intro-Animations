@@ -15,6 +15,9 @@ import funkin.play.scoring.Scoring;
 import funkin.Highscore;
 import funkin.audio.FunkinSound;
 
+import funkin.play.character.CharacterType;
+import funkin.play.character.CharacterDataParser;
+
 class FreshSong extends Song {
 	var hasPlayedCutscene:Bool;
 
@@ -97,6 +100,10 @@ class FreshSong extends Song {
 			return;
 		}
 
+		currentStage.getDad().destroy();
+		character = CharacterDataParser.fetchCharacter('dad-cutscene');
+		currentStage.addCharacter(character, CharacterType.DAD);
+		currentStage.refresh();
 		currentStage.getDad().playAnimation('frown');
 
 		var bfPoint = currentStage.getBoyfriend().cameraFocusPoint;
@@ -139,6 +146,13 @@ class FreshSong extends Song {
 			trace('Begin countdown');
 			if (doinGood)
 				currentStage.getDad().playAnimation('smirk');
+
+			new FlxTimer().start(2, function(tmr) {
+				currentStage.getDad().destroy();
+				character = CharacterDataParser.fetchCharacter('dad');
+				currentStage.addCharacter(character, CharacterType.DAD);
+				currentStage.refresh();
+			});
 
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom, 2, true, FlxEase.quadInOut);
 

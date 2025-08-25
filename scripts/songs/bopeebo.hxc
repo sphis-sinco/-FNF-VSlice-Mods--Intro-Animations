@@ -16,6 +16,9 @@ import funkin.play.character.SparrowCharacter;
 
 import funkin.modding.events.ScriptEvent;
 
+import funkin.play.character.CharacterType;
+import funkin.play.character.CharacterDataParser;
+
 class BopeeboSong extends Song {
 	var hasPlayedCutscene:Bool;
 
@@ -74,6 +77,12 @@ class BopeeboSong extends Song {
 			return;
 		}
 
+		currentStage.getDad().destroy();
+		character = CharacterDataParser.fetchCharacter('dad-cutscene');
+		currentStage.addCharacter(character, CharacterType.DAD);
+		currentStage.refresh();
+		currentStage.getDad().playAnimation('idle');
+
 		currentStage.getDad().playAnimation('frown');
 		
 		FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 1);
@@ -105,6 +114,13 @@ class BopeeboSong extends Song {
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom, 2, true, FlxEase.quadInOut);
 			PlayState.instance.startCountdown();
 			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
+		});
+
+		new FlxTimer().start(8.5, function(tmr) {
+			currentStage.getDad().destroy();
+			character = CharacterDataParser.fetchCharacter('dad');
+			currentStage.addCharacter(character, CharacterType.DAD);
+			currentStage.refresh();
 		});
 	}
 

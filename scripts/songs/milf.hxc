@@ -18,6 +18,9 @@ import funkin.play.song.Song;
 import funkin.play.stage.StageProp;
 import funkin.save.Save;
 
+import funkin.play.character.CharacterType;
+import funkin.play.character.CharacterDataParser;
+
 class MILFSong extends Song {
 	var hasPlayedCutscene:Bool;
 

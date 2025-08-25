@@ -21,6 +21,9 @@ import flixel.text.FlxTextBorderStyle;
 import funkin.util.TouchUtil;
 import funkin.ui.FullScreenScaleMode;
 
+import funkin.play.character.CharacterType;
+import funkin.play.character.CharacterDataParser;
+
 // We have to use FlxBasePoint in scripts because FlxPoint is inlined and not available in scripts
 class EggnogSong extends Song {
 	// var santaDead:ScriptedFlxAtlasSprite;
@@ -54,6 +57,11 @@ class EggnogSong extends Song {
 			PlayState.instance.startCountdown();
 			return;
 		}
+		
+		currentStage.getDad().destroy();
+		character = CharacterDataParser.fetchCharacter('parents-christmas-cutscene');
+		currentStage.addCharacter(character, CharacterType.DAD);
+		currentStage.refresh();
 
 		currentStage.getDad().playAnimation('Mad');
 
@@ -64,6 +72,14 @@ class EggnogSong extends Song {
 
 		new FlxTimer().start(3, function(tmr) {
 			trace('Begin countdown');
+		
+			new FlxTimer().start(15, function(tmr) {
+				currentStage.getDad().destroy();
+				character = CharacterDataParser.fetchCharacter('parents-christmas');
+				currentStage.addCharacter(character, CharacterType.DAD);
+				currentStage.refresh();
+			});
+
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1, 2, true, FlxEase.quadInOut);
 			PlayState.instance.startCountdown();
 			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);

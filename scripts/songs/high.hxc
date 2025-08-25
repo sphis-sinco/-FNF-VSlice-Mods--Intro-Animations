@@ -18,6 +18,9 @@ import funkin.play.song.Song;
 import funkin.play.stage.StageProp;
 import funkin.save.Save;
 
+import funkin.play.character.CharacterType;
+import funkin.play.character.CharacterDataParser;
+
 class HighSong extends Song {
 	var hasPlayedCutscene:Bool;
 
@@ -71,6 +74,12 @@ class HighSong extends Song {
 			return;
 		}
 
+		currentStage.getDad().destroy();
+		character = CharacterDataParser.fetchCharacter('mom-car-cutscene');
+		currentStage.addCharacter(character, CharacterType.DAD);
+		currentStage.refresh();
+		currentStage.getDad().playAnimation('idle');
+
 		currentStage.getGirlfriend().playAnimation('idle-hold');
 		currentStage.getBoyfriend().playAnimation('idle');
 		currentStage.getDad().playAnimation('idle');
@@ -81,7 +90,7 @@ class HighSong extends Song {
 			trace('Focusing camera on girlfriend.');
 			var gfPoint = currentStage.getGirlfriend().cameraFocusPoint;
 			PlayState.instance.tweenCameraToPosition(gfPoint.x, gfPoint.y + 128 + 32, 2, FlxEase.quadInOut);
-			PlayState.instance.tweenCameraZoom(currentStage.camZoom * .9, 2, true, FlxEase.quadInOut);
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.2, 2, true, FlxEase.quadInOut);
 		});
 
 		new FlxTimer().start(3, function(tmr) {
@@ -97,6 +106,13 @@ class HighSong extends Song {
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1, 2, true, FlxEase.quadInOut);
 			PlayState.instance.startCountdown();
 			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
+
+			new FlxTimer().start(1, function(tmr) {				
+				PlayState.instance.currentStage.getDad().destroy();
+				character = CharacterDataParser.fetchCharacter('mom-car');
+				PlayState.instance.currentStage.addCharacter(character, CharacterType.DAD);
+				PlayState.instance.currentStage.refresh();
+			});
 		});
 	}
 }
