@@ -55,19 +55,8 @@ class CocoaSong extends Song {
 		PlayState.instance.disableKeys = true;
 		var currentStage = PlayState.instance.currentStage;
 
-		if (currentStage.getBoyfriend() == null) {
-			trace('No BF to focus on. Cutscene won\'t work properly. Skipping...');
-			PlayState.instance.startCountdown();
-			return;
-		}
-
 		if (currentStage.getDad() == null) {
 			trace('No dad to focus on. Cutscene won\'t work properly. Skipping...');
-			PlayState.instance.startCountdown();
-			return;
-		}
-		if (currentStage.getGirlfriend() == null) {
-			trace('No GF to focus on. Cutscene won\'t work properly. Skipping...');
 			PlayState.instance.startCountdown();
 			return;
 		}

@@ -23,6 +23,20 @@
                         "offsets": [0, 0]
                 },
                 {
+                        "name": "Mad",
+                        "prefix": "Parent Christmas Mad",
+                        "assetPath": "characters/parents_mad",
+                        "offsets": [0, 0]
+                },
+                {
+                        "name": "Mad-hold",
+                        "prefix": "Parent Christmas Mad",
+                        "looped": true,
+                        "frameIndices": [10, 11, 12, 13],
+                        "assetPath": "characters/parents_mad",
+                        "offsets": [0, 0]
+                },
+                {
                         "name": "singLEFT",
                         "prefix": "Parent Left Note Dad",
                         "offsets": [-30, 16]
