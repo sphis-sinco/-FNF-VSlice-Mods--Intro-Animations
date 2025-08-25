@@ -115,18 +115,15 @@ class FreshSong extends Song {
 		currentStage.getGirlfriend().dance();
 		
 		new FlxTimer().start(1, function(tmr) {
-			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.2, 2, true, FlxEase.quadInOut);
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.5, 2, true, FlxEase.quadInOut);
 		});
 
 		new FlxTimer().start(3, function(tmr) {
 			currentStage.getBoyfriend().playAnimation('burpSmileLong');
+			currentStage.getDad().playAnimation('frown');
 
 			FunkinSound.playOnce(Paths.sound('pico/burp'), 1);
 			PlayState.instance.tweenCameraToPosition(dadPoint.x, dadPoint.y, 4, FlxEase.quadInOut);
-		});
-
-		new FlxTimer().start(4, function(tmr) {
-			currentStage.getDad().playAnimation('frown');
 		});
 
 		new FlxTimer().start(5, function(tmr) {
