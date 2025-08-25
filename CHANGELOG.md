@@ -1,1 +1,1 @@
-Any changes that were meant to be mobile-specific now apply to desktop, Tweak
+Softlock in Bopeebo intro cutscene, Bugfix

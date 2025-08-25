@@ -118,10 +118,10 @@ class BopeeboSong extends Song {
 		});
 
 		new FlxTimer().start(8.5, function(tmr) {
-			currentStage.getDad().destroy();
+			PlayState.instance.currentStage.getDad().destroy();
 			character = CharacterDataParser.fetchCharacter('dad');
-			currentStage.addCharacter(character, CharacterType.DAD);
-			currentStage.refresh();
+			PlayState.instance.currentStage.addCharacter(character, CharacterType.DAD);
+			PlayState.instance.currentStage.refresh();
 		});
 	}
 

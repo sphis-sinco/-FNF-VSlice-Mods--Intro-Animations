@@ -20,7 +20,7 @@ import flixel.FlxG;
 class MainMenuInjection extends Module {
 	
     var yourMainMenuText = "Intro Animations v";
-    var versionString = "7.2";
+    var versionString = "7.3";
 	var currentState = "";
 
     function new() {
