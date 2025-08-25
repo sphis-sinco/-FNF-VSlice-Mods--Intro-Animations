@@ -26,7 +26,7 @@
                         "boxAnimation": "enter",
 
                         "text": [
-                                "Ah, a new fair maiden has come in search of true love!"
+                                "Ah, a familiar maiden has come in search of true love at a harmonizing time like this!"
                         ]
                 },
                 {
@@ -36,7 +36,7 @@
                         "boxAnimation": "speaking",
 
                         "text": [
-                                "A serenade between gentlemen shall decide where her beautiful heart shall reside."
+                                "A sequel in our serenade shall decide where her beautiful heart shall reside."
                         ]
                 },
                 {
@@ -45,7 +45,7 @@
                         "box": "roses",
                         "boxAnimation": "speaking",
 
-                        "text": ["Beep bo bop"]
+                        "text": ["Bippity bappity buu"]
                 }
         ]
 }
