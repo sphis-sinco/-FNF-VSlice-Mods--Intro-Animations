@@ -64,7 +64,7 @@ class BopeeboSong extends Song {
 		}
 
 		currentStage.getBoyfriend().destroy();
-		character = CharacterDataParser.fetchCharacter('pico-playable-cutscene');
+		var character = CharacterDataParser.fetchCharacter('pico-playable-cutscene');
 		currentStage.addCharacter(character, CharacterType.BF);
 		currentStage.refresh();
 		currentStage.getBoyfriend().playAnimation('pocket-frozen');
@@ -74,7 +74,7 @@ class BopeeboSong extends Song {
 		});
 		new FlxTimer().start(4, function(tmr) {
 			currentStage.getBoyfriend().destroy();
-			character = CharacterDataParser.fetchCharacter('pico-playable');
+			var character = CharacterDataParser.fetchCharacter('pico-playable');
 			currentStage.addCharacter(character, CharacterType.BF);
 			currentStage.refresh();
 			currentStage.getBoyfriend().playAnimation('idle');
@@ -108,7 +108,7 @@ class BopeeboSong extends Song {
 		}
 
 		currentStage.getDad().destroy();
-		character = CharacterDataParser.fetchCharacter('dad-cutscene');
+		var character = CharacterDataParser.fetchCharacter('dad-cutscene');
 		currentStage.addCharacter(character, CharacterType.DAD);
 		currentStage.refresh();
 		currentStage.getDad().playAnimation('idle');
@@ -149,7 +149,7 @@ class BopeeboSong extends Song {
 
 		new FlxTimer().start(8.5, function(tmr) {
 			PlayState.instance.currentStage.getDad().destroy();
-			character = CharacterDataParser.fetchCharacter('dad');
+			var character = CharacterDataParser.fetchCharacter('dad');
 			PlayState.instance.currentStage.addCharacter(character, CharacterType.DAD);
 			PlayState.instance.currentStage.refresh();
 		});

@@ -38,7 +38,7 @@ class LitUpSong extends Song {
 			var offsetX = -30;
 
 			PlayState.instance.currentStage.getBoyfriend().destroy();
-			character = CharacterDataParser.fetchCharacter('pico-cutscene');
+			var character = CharacterDataParser.fetchCharacter('pico-cutscene');
 			PlayState.instance.currentStage.addCharacter(character, CharacterType.BF);
 			PlayState.instance.currentStage.refresh();
 			PlayState.instance.currentStage.getBoyfriend().x += offsetX;
@@ -50,7 +50,7 @@ class LitUpSong extends Song {
 
 			new FlxTimer().start(4, function(tmr) {
 				PlayState.instance.currentStage.getBoyfriend().destroy();
-				character = CharacterDataParser.fetchCharacter('pico-playable');
+				var character = CharacterDataParser.fetchCharacter('pico-playable');
 				PlayState.instance.currentStage.addCharacter(character, CharacterType.BF);
 				PlayState.instance.currentStage.refresh();
 				PlayState.instance.currentStage.getBoyfriend().x -= offsetX;

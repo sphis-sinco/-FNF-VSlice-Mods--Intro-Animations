@@ -78,7 +78,7 @@ class BlammedSong extends Song {
 		var dadPoint = currentStage.getDad().cameraFocusPoint;		
 
 		currentStage.getDad().destroy();
-		character = CharacterDataParser.fetchCharacter('pico-cutscene');
+		var character = CharacterDataParser.fetchCharacter('pico-cutscene');
 		currentStage.addCharacter(character, CharacterType.DAD);
 		currentStage.refresh();
 		
@@ -102,7 +102,7 @@ class BlammedSong extends Song {
 			trace('Begin countdown');
 
 			currentStage.getDad().destroy();
-			character = CharacterDataParser.fetchCharacter('pico');
+			var character = CharacterDataParser.fetchCharacter('pico');
 			currentStage.addCharacter(character, CharacterType.DAD);
 			currentStage.refresh();
 			currentStage.getDad().playAnimation('idle');

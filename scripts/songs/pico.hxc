@@ -88,7 +88,7 @@ class PicoSong extends Song {
 		currentStage.getBoyfriend().playAnimation('scared');		
 
 		currentStage.getDad().destroy();
-		character = CharacterDataParser.fetchCharacter('pico-cutscene');
+		var character = CharacterDataParser.fetchCharacter('pico-cutscene');
 		currentStage.addCharacter(character, CharacterType.DAD);
 		currentStage.refresh();
 		currentStage.getDad().playAnimation('pissed');
@@ -109,7 +109,7 @@ class PicoSong extends Song {
 			trace('Begin countdown');
 
 			currentStage.getDad().destroy();
-			character = CharacterDataParser.fetchCharacter('pico');
+			var character = CharacterDataParser.fetchCharacter('pico');
 			currentStage.addCharacter(character, CharacterType.DAD);
 			currentStage.refresh();
 			currentStage.getDad().playAnimation('idle');

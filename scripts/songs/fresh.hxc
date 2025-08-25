@@ -101,7 +101,7 @@ class FreshSong extends Song {
 		}
 
 		currentStage.getDad().destroy();
-		character = CharacterDataParser.fetchCharacter('dad-cutscene');
+		var character = CharacterDataParser.fetchCharacter('dad-cutscene');
 		currentStage.addCharacter(character, CharacterType.DAD);
 		currentStage.refresh();
 		currentStage.getDad().playAnimation('frown');
@@ -149,7 +149,7 @@ class FreshSong extends Song {
 
 			new FlxTimer().start(2, function(tmr) {
 				currentStage.getDad().destroy();
-				character = CharacterDataParser.fetchCharacter('dad');
+				var character = CharacterDataParser.fetchCharacter('dad');
 				currentStage.addCharacter(character, CharacterType.DAD);
 				currentStage.refresh();
 			});

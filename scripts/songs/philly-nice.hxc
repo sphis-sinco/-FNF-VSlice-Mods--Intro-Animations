@@ -87,7 +87,7 @@ class PhillyNiceSong extends Song {
 			FunkinSound.playOnce(Paths.sound('week1/hey'), 1);		
 
 			currentStage.getDad().destroy();
-			character = CharacterDataParser.fetchCharacter('pico-cutscene');
+			var character = CharacterDataParser.fetchCharacter('pico-cutscene');
 			currentStage.addCharacter(character, CharacterType.DAD);
 			currentStage.refresh();
 			currentStage.getDad().playAnimation('pissed-flinch');	
@@ -102,7 +102,7 @@ class PhillyNiceSong extends Song {
 			trace('Begin countdown');
 
 			currentStage.getDad().destroy();
-			character = CharacterDataParser.fetchCharacter('pico');
+			var character = CharacterDataParser.fetchCharacter('pico');
 			currentStage.addCharacter(character, CharacterType.DAD);
 			currentStage.refresh();
 			currentStage.getDad().playAnimation('idle');

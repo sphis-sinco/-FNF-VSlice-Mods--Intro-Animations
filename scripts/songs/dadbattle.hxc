@@ -96,7 +96,7 @@ class DadBattleSong extends Song {
 		}
 
 		currentStage.getDad().destroy();
-		character = CharacterDataParser.fetchCharacter('dad-mad');
+		var character = CharacterDataParser.fetchCharacter('dad-mad');
 		currentStage.addCharacter(character, CharacterType.DAD);
 		currentStage.refresh();
 		currentStage.getDad().playAnimation('idle');

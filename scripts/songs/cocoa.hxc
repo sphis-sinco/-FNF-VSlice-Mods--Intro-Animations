@@ -65,7 +65,7 @@ class CocoaSong extends Song {
 		}
 		
 		currentStage.getDad().destroy();
-		character = CharacterDataParser.fetchCharacter('parents-christmas-cutscene');
+		var character = CharacterDataParser.fetchCharacter('parents-christmas-cutscene');
 		currentStage.addCharacter(character, CharacterType.DAD);
 		currentStage.refresh();
 
@@ -85,7 +85,7 @@ class CocoaSong extends Song {
 
 		new FlxTimer().start(3, function(tmr) {
 			currentStage.getDad().destroy();
-			character = CharacterDataParser.fetchCharacter('parents-christmas');
+			var character = CharacterDataParser.fetchCharacter('parents-christmas');
 			currentStage.addCharacter(character, CharacterType.DAD);
 			currentStage.refresh();
 		});
