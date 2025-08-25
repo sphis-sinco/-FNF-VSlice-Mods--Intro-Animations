@@ -247,6 +247,10 @@ class PhillyStreetsErectStage extends Stage {
 
 		PlayState.instance.currentStage.add(mist5);
 		PlayState.instance.currentStage.refresh(); // Apply z-index.
+
+                var spraycanPile = getNamedProp('spraycanPile');
+                spraycanPile.shader = colorShader;
+		PlayState.instance.currentStage.refresh();
 	}
 
 	override function onDestroy(event:ScriptEvent) {
