@@ -79,6 +79,12 @@ class UghSong extends Song {
 			PlayState.instance.startCountdown();
 			return;
 		}
+
+		if (currentStage.getGirlfriend() == null) {
+			trace('No GF to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
 		
 
 		var bfPoint = currentStage.getBoyfriend().cameraFocusPoint;
@@ -87,6 +93,8 @@ class UghSong extends Song {
 		PlayState.instance.tweenCameraToPosition(bfPoint.x, bfPoint.y, 0, FlxEase.quadInOut);
 		new FlxTimer().start(1, function(tmr) {
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.2, 2, true, FlxEase.quadInOut);
+
+			currentStage.getGirlfriend().dance();
 		});
 
 		new FlxTimer().start(3, function(tmr) {
