@@ -80,7 +80,6 @@ class SatinPantiesSong extends Song {
 		currentStage.refresh();
 		currentStage.getDad().playAnimation('idle');
 		
-
 		currentStage.getBoyfriend().destroy();
 		character = CharacterDataParser.fetchCharacter('bf-car-cutscene');
 		currentStage.addCharacter(character, CharacterType.BF);
