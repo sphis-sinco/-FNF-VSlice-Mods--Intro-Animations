@@ -104,7 +104,7 @@ class SenpaiSong extends Song {
 		PlayState.instance.disableKeys = false;
 		var targetDialogue = PlayState.instance.currentVariation == 'pico' ? 'senpai-pico' : 'senpai';
 		if (PlayState.instance.currentVariation == 'erect')
-			targetDialogue = 'senpai-erect'
+			targetDialogue = 'senpai-erect';
 		PlayState.instance.startConversation(targetDialogue);
 	}
 

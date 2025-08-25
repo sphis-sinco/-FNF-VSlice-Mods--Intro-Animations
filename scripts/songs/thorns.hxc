@@ -117,7 +117,7 @@ class ThornsSong extends Song {
 		PlayState.instance.disableKeys = false;
 		var targetDialogue = 'thorns';
 		if (PlayState.instance.currentVariation == 'erect')
-			targetDialogue = 'thorns-erect'
+			targetDialogue = 'thorns-erect';
 		PlayState.instance.startConversation(targetDialogue);
 	}
 
