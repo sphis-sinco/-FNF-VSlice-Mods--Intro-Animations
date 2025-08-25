@@ -51,6 +51,8 @@ class UghSong extends Song {
 				startVideo();
 			if (PlayState.instance.currentVariation == 'erect')
 				ughErect();
+			if (PlayState.instance.currentVariation == 'pico')
+				ughPico();
 		} else {
 			PlayState.instance.isInCutscene = false;
 			PlayState.instance.disableKeys = false;
@@ -59,6 +61,37 @@ class UghSong extends Song {
 
 	function startVideo() {
 		VideoCutscene.play(Paths.videos('ughCutscene'));
+	}
+
+	function ughPico() {
+		PlayState.instance.isInCutscene = true;
+		PlayState.instance.disableKeys = true;
+		var currentStage = PlayState.instance.currentStage;
+
+		if (currentStage.getDad() == null) {
+			trace('No dad to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+		
+
+		FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 1);
+		new FlxTimer().start(1, function(tmr) {
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.2, 2, true, FlxEase.quadInOut);
+		});
+
+		new FlxTimer().start(3, function(tmr) {
+			currentStage.getDad().playAnimation('ugh');
+
+			FunkinSound.playOnce(Paths.sound('week7/ugh'), 1);
+		});
+
+		new FlxTimer().start(5, function(tmr) {
+			trace('Begin countdown');
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1, 2, true, FlxEase.quadInOut);
+			PlayState.instance.startCountdown();
+			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
+		});
 	}
 
 	function ughErect() {
