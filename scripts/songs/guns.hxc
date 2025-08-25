@@ -4,6 +4,11 @@ import funkin.play.cutscene.VideoCutscene;
 import funkin.save.Save;
 import funkin.play.PlayStatePlaylist;
 
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
+import flixel.util.FlxTimer;
+import funkin.audio.FunkinSound;
+
 class GunsSong extends Song {
 	var hasPlayedCutscene:Bool;
 
@@ -57,6 +62,9 @@ class GunsSong extends Song {
 				event.cancel(); // CANCEL THE COUNTDOWN!
 
 				gunsPico();
+			} else {
+				PlayState.instance.isInCutscene = false;
+				PlayState.instance.disableKeys = false;
 			}
 		}
 	}
