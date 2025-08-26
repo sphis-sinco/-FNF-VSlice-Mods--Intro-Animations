@@ -1,2 +1,1 @@
-Eggnog (Pico Mix) intro cutscene, Addition
-Cocoa (Pico Mix) intro cutscene, Addition
+Weekend 1 intro cutscene softlocks, Bugfix

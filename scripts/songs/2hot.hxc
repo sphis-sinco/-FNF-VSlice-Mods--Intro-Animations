@@ -122,7 +122,7 @@ class TwoHOTSong extends Song {
 			return;
 		}
 
-		PlayState.instance.togglePauseButton();
+		// PlayState.instance.togglePauseButton();
 		PlayState.instance.isInCutscene = true;
 		PlayState.instance.mayPauseGame = false;
 
