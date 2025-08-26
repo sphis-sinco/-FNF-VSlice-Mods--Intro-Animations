@@ -47,8 +47,10 @@ class UghSong extends Song {
 
 			event.cancel(); // CANCEL THE COUNTDOWN!
 
-			if (PlayState.instance.currentVariation != 'default' && PlayStatePlaylist.isStoryMode)
+			if (PlayState.instance.currentVariation == 'default' && PlayStatePlaylist.isStoryMode)
 				startVideo();
+			else if (PlayState.instance.currentVariation == 'default' && !PlayStatePlaylist.isStoryMode)
+				ughErect();
 			else if (PlayState.instance.currentVariation == 'erect')
 				ughErect();
 			else if (PlayState.instance.currentVariation == 'pico')

@@ -191,11 +191,19 @@ class DarnellSong extends Song {
 
 		new FlxTimer().start(0.7, function(tmr) {
 			cutsceneMusic.play(false);
-			if (PlayStatePlaylist.isStoryMode) {
-				FlxTween.tween(bgSprite, {alpha: 0}, 2, {startDelay: 0.3}, function() {
-					bgSprite.visible = false;
-				});
+
+			if (!PlayStatePlaylist.isStoryMode) {	
+				trace('Adding black background behind cutscene over UI');
+				bgSprite = new FunkinSprite(-100, -100);
+				bgSprite.makeSolidColor(2000, 2500, 0xFF000000);
+				bgSprite.cameras = [PlayState.instance.camHUD]; // Show over the HUD.
+				bgSprite.zIndex = 1000000;
+				PlayState.instance.add(bgSprite);
+				PlayState.instance.refresh();
 			}
+			FlxTween.tween(bgSprite, {alpha: 0}, 2, {startDelay: 0.3}, function() {
+				bgSprite.visible = false;
+			});
 		});
 
 		// move camera out to show everything
