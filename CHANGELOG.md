@@ -1,5 +1,1 @@
-Darnell softlock "crash", Bugfix
-character replacement code, Tweak
-Dadbattle (Pico Mix) Intro Cutscene, Addition
-Fresh (Pico Mix) Intro Cutscene, Addition
-Bopeebo (Pico Mix) Intro Cutscene, Addition
+Pico pockets animation in Bopeebo (Pico Mix), Tweak
