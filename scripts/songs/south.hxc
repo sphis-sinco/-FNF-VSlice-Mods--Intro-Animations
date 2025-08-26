@@ -33,12 +33,59 @@ class SouthSong extends Song {
 					PlayState.instance.camHUD.visible = false;
 					event.cancel(); // CANCEL THE COUNTDOWN!
 					startBFCutscene();
+				case 'pico':
+					PlayState.instance.camHUD.visible = false;
+					event.cancel(); // CANCEL THE COUNTDOWN!
+					startPicoCutscene();
 			}
 		}
 		else {
 			PlayState.instance.isInCutscene = false;
 			PlayState.instance.disableKeys = false;
 		}
+	}
+
+	function startPicoCutscene()
+	{	
+		PlayState.instance.isInCutscene = true;
+		PlayState.instance.disableKeys = true;
+		var currentStage = PlayState.instance.currentStage;
+
+		if (currentStage.getBoyfriend() == null) {
+			trace('No BF to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+
+		if (currentStage.getDad() == null) {
+			trace('No dad to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+		if (currentStage.getGirlfriend() == null) {
+			trace('No GF to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+
+		currentStage.fetchAssetPaths();
+		currentStage.doLightningStrike(true);
+
+		currentStage.getGirlfriend().dance(true);
+		currentStage.getBoyfriend().dance(true);
+		currentStage.getDad().playAnimation('cheer');
+		FunkinSound.playOnce(Paths.sound('week2/spooky-cheer'), 1);
+
+		var gfPoint = currentStage.getGirlfriend().cameraFocusPoint;
+		PlayState.instance.tweenCameraToPosition(gfPoint.x, gfPoint.y, 0, FlxEase.quadInOut);
+		PlayState.instance.tweenCameraZoom(currentStage.camZoom * 0.75, 0, true, FlxEase.bounceOut);
+
+		new FlxTimer().start(2, function(tmr) {
+			trace('Begin countdown');
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1, 2, true, FlxEase.quadInOut);
+			PlayState.instance.startCountdown();
+			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
+		});
 	}
 
 	function startBFCutscene()
