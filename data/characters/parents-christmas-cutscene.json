@@ -8,6 +8,12 @@
         },
         "animations": [
                 {
+                        "name": "ew",
+                        "prefix": "Parent Christmas WTF",
+                        "assetPath": "characters/parents_ew",
+                        "offsets": [0, 0]
+                },
+                {
                         "name": "intro",
                         "prefix": "Parent Christmas Intro",
                         "assetPath": "characters/parents_intro",

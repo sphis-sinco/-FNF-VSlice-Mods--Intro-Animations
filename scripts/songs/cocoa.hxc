@@ -46,11 +46,86 @@ class CocoaSong extends Song {
 					PlayState.instance.camHUD.visible = false;
 					event.cancel(); // CANCEL THE COUNTDOWN!
 					startBFCutscene();
+				case 'pico':
+					PlayState.instance.camHUD.visible = false;
+					event.cancel(); // CANCEL THE COUNTDOWN!
+					startPicoCutscene();
 			}
 		} else {
 			PlayState.instance.isInCutscene = false;
 			PlayState.instance.disableKeys = false;
 		}
+	}
+
+	function startPicoCutscene() {
+		PlayState.instance.isInCutscene = true;
+		PlayState.instance.disableKeys = true;
+		var currentStage = PlayState.instance.currentStage;
+
+		if (currentStage.getDad() == null) {
+			trace('No dad to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+
+		if (currentStage.getBoyfriend() == null) {
+			trace('No dad to focus on. Cutscene won\'t work properly. Skipping...');
+			PlayState.instance.startCountdown();
+			return;
+		}
+		
+		var bfPoint = currentStage.getBoyfriend().cameraFocusPoint;
+		var dadPoint = currentStage.getDad().cameraFocusPoint;	
+
+		currentStage.getDad().destroy();
+		var character = CharacterDataParser.fetchCharacter('parents-christmas-cutscene');
+		currentStage.addCharacter(character, CharacterType.DAD);
+		currentStage.refresh();
+		
+		currentStage.getBoyfriend().destroy();
+		var character = CharacterDataParser.fetchCharacter('pico-christmas-cutscene');
+		currentStage.addCharacter(character, CharacterType.BF);
+		currentStage.refresh();
+
+		currentStage.getDad().playAnimation('intro');
+
+		FlxTween.tween(PlayState.instance.camHUD, {alpha: 0}, 1);
+		new FlxTimer().start(1, function(tmr) {
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1.2, 2, true, FlxEase.quadInOut);
+		});
+		new FlxTimer().start(2, function(tmr) {
+			PlayState.instance.tweenCameraToPosition(bfPoint.x + 320, bfPoint.y, 2, FlxEase.quadInOut);
+		});
+		new FlxTimer().start(4, function(tmr) {
+			currentStage.getBoyfriend().playAnimation('burp');
+			currentStage.getDad().playAnimation('ew');
+
+			FunkinSound.playOnce(Paths.sound('pico/burp'), 1);
+			PlayState.instance.tweenCameraToPosition(dadPoint.x, dadPoint.y, 4, FlxEase.quadInOut);
+		});
+
+		new FlxTimer().start(8, function(tmr) {
+			trace('Begin countdown');
+
+			new FlxTimer().start(3, function(tmr) {
+				PlayState.instance.currentStage.getDad().destroy();
+				var character = CharacterDataParser.fetchCharacter('parents-christmas');
+				PlayState.instance.currentStage.addCharacter(character, CharacterType.DAD);
+				PlayState.instance.currentStage.refresh();
+			});
+		
+			currentStage.getBoyfriend().destroy();
+			var character = CharacterDataParser.fetchCharacter('pico-christmas');
+			currentStage.addCharacter(character, CharacterType.BF);
+			currentStage.refresh();
+
+			PlayState.instance.tweenCameraToPosition(dadPoint.x, dadPoint.y, 2, FlxEase.quadInOut);
+			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1, 2, true, FlxEase.quadInOut);
+
+			PlayState.instance.startCountdown();
+			PlayState.instance.currentStage.getDad().playAnimation('ew');
+			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 1);
+		});
 	}
 
 	function startBFCutscene() {

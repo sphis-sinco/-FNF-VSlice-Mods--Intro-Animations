@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="pico_christmas_burp.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="burp big pico0000" x="4" y="4" width="487" height="490" frameX="-84" frameY="0" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0001" x="4" y="4" width="487" height="490" frameX="-84" frameY="0" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0002" x="499" y="4" width="490" height="467" frameX="-2" frameY="-24" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0003" x="997" y="4" width="490" height="467" frameX="-2" frameY="-24" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0004" x="1495" y="4" width="501" height="469" frameX="0" frameY="-22" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0005" x="4" y="502" width="501" height="469" frameX="0" frameY="-22" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0006" x="513" y="502" width="501" height="469" frameX="0" frameY="-22" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0007" x="1022" y="502" width="501" height="469" frameX="0" frameY="-22" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0008" x="1495" y="4" width="501" height="469" frameX="0" frameY="-22" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0009" x="4" y="502" width="501" height="469" frameX="0" frameY="-22" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0010" x="1531" y="502" width="498" height="469" frameX="-7" frameY="-22" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0011" x="4" y="979" width="498" height="469" frameX="-7" frameY="-22" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0012" x="510" y="979" width="489" height="475" frameX="-39" frameY="-16" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0013" x="510" y="979" width="489" height="475" frameX="-39" frameY="-16" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0014" x="510" y="979" width="489" height="475" frameX="-39" frameY="-16" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0015" x="1007" y="979" width="489" height="475" frameX="-42" frameY="-16" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0016" x="1007" y="979" width="489" height="475" frameX="-42" frameY="-16" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0017" x="1007" y="979" width="489" height="475" frameX="-42" frameY="-16" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0018" x="1007" y="979" width="489" height="475" frameX="-42" frameY="-16" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0019" x="1007" y="979" width="489" height="475" frameX="-42" frameY="-16" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0020" x="1007" y="979" width="489" height="475" frameX="-42" frameY="-16" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0021" x="1007" y="979" width="489" height="475" frameX="-42" frameY="-16" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0022" x="1007" y="979" width="489" height="475" frameX="-42" frameY="-16" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0023" x="1007" y="979" width="489" height="475" frameX="-42" frameY="-16" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0024" x="1007" y="979" width="489" height="475" frameX="-42" frameY="-16" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0025" x="1007" y="979" width="489" height="475" frameX="-42" frameY="-16" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0026" x="1007" y="979" width="489" height="475" frameX="-42" frameY="-16" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0027" x="1007" y="979" width="489" height="475" frameX="-42" frameY="-16" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0028" x="1007" y="979" width="489" height="475" frameX="-42" frameY="-16" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0029" x="1007" y="979" width="489" height="475" frameX="-42" frameY="-16" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0030" x="1007" y="979" width="489" height="475" frameX="-42" frameY="-16" frameWidth="571" frameHeight="491"/>
+	<SubTexture name="burp big pico0031" x="1007" y="979" width="489" height="475" frameX="-42" frameY="-16" frameWidth="571" frameHeight="491"/>
+</TextureAtlas>
