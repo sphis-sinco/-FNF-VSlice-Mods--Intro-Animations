@@ -127,20 +127,18 @@ class DadBattleSong extends Song {
 
 			FunkinSound.playOnce(Paths.sound('pico/burp'), 1);
 			PlayState.instance.tweenCameraToPosition(dadPoint.x, dadPoint.y, 4, FlxEase.quadInOut);
-
-			PlayState.instance.currentStage.getGirlfriend().playAnimation('laughCutscene', true);
-			FunkinSound.playOnce(Paths.sound('pico/nene_laugh'), 0.6);
+			currentStage.getDad().playAnimation('idle-hold');
 		});
 
 		new FlxTimer().start(5, function(tmr) {
 			trace('Begin countdown');
 
-			new FlxTimer().start(2.5, function(tmr) {
+			new FlxTimer().start(13, function(tmr) {
 				currentStage.getDad().destroy();
 				var character = CharacterDataParser.fetchCharacter('dad');
 				currentStage.addCharacter(character, CharacterType.DAD);
 				currentStage.refresh();
-				currentStage.getDad().playAnimation('singDOWN');
+				currentStage.getDad().playAnimation('singUP');
 			});
 			PlayState.instance.tweenCameraZoom(currentStage.camZoom * 1, 2, true, FlxEase.quadInOut);
 			PlayState.instance.startCountdown();
