@@ -107,20 +107,20 @@ class DarnellSong extends Song {
 	}
 
 	function introCutscene() {
-		if (currentStage.getBoyfriend() == null)
+		if (PlayState.instance.currentStage.getBoyfriend() == null)
 		{
 			trace('No BF to focus on. Cutscene won\'t work properly. Skipping...');
 			PlayState.instance.startCountdown();
 			return;
 		}
 
-		if (currentStage.getDad() == null)
+		if (PlayState.instance.currentStage.getDad() == null)
 		{
 			trace('No dad to focus on. Cutscene won\'t work properly. Skipping...');
 			PlayState.instance.startCountdown();
 			return;
 		}
-		if (currentStage.getGirlfriend() == null)
+		if (PlayState.instance.currentStage.getGirlfriend() == null)
 		{
 			trace('No GF to focus on. Cutscene won\'t work properly. Skipping...');
 			PlayState.instance.startCountdown();
